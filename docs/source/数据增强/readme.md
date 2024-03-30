@@ -9,3 +9,4 @@
     - [官方文档](https://albumentations.ai/docs/getting_started/simultaneous_augmentation/)
     - [手写体数据增强](https://zhuanlan.zhihu.com/p/636127026)
     - [对应格式的数据增强](https://aistudio.baidu.com/projectdetail/4334420)
+    - [使用教程](https://juejin.cn/post/7070668336010362910)
