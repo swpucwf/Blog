@@ -28,17 +28,26 @@
       color: var(--theme-color, currentColor);
     }
 
-    /* 章节编号：只给 h2 自动编号，h3 保留正文里手写的 x.y（两者号段已校对一致）。
-       正文与侧边栏目录各用一套计数器，保证同一章在两处显示相同序号。 */
-    .markdown-section { counter-reset: body-h2; }
-    .markdown-section > h2 { counter-increment: body-h2; }
-    .markdown-section > h2::before {
-      content: counter(body-h2) ". ";
-    }
-    .app-sub-sidebar > li > ul { counter-reset: toc-h2; }
-    .app-sub-sidebar > li > ul > li { counter-increment: toc-h2; }
+    /* 章节编号：h2/h3/h4 全部由计数器生成（1. / 1.1 / 1.1.1），正文不再手写序号。
+       正文与侧边栏目录各一套计数器但层级对应，保证同一节在两处序号一致。
+       目录层级由 genTree 决定：h1 = .app-sub-sidebar>li，h2 = >li>ul>li，h3 = >li>ul>li>ul>li */
+    .markdown-section { counter-reset: h2n; }
+    .markdown-section > h2 { counter-increment: h2n; counter-reset: h3n; }
+    .markdown-section > h2::before { content: counter(h2n) ". "; }
+    .markdown-section > h3 { counter-increment: h3n; counter-reset: h4n; }
+    .markdown-section > h3::before { content: counter(h2n) "." counter(h3n) " "; }
+    .markdown-section > h4 { counter-increment: h4n; }
+    .markdown-section > h4::before { content: counter(h2n) "." counter(h3n) "." counter(h4n) " "; }
+
+    .app-sub-sidebar { counter-reset: t2; }
+    .app-sub-sidebar > li > ul > li { counter-increment: t2; counter-reset: t3; }
     .app-sub-sidebar > li > ul > li > a.section-link::before {
-      content: counter(toc-h2) ". ";
+      content: counter(t2) ". ";
+      color: var(--theme-color, currentColor);
+    }
+    .app-sub-sidebar > li > ul > li > ul > li { counter-increment: t3; }
+    .app-sub-sidebar > li > ul > li > ul > li > a.section-link::before {
+      content: counter(t2) "." counter(t3) " ";
       color: var(--theme-color, currentColor);
     }
   </style>
@@ -52,7 +61,7 @@
       loadSidebar: true,
       auto2top: true,
       coverpage: true,
-      subMaxLevel: 2,
+      subMaxLevel: 3,
       alias: {
           '/.*/_sidebar.md': '/_sidebar.md'
       },

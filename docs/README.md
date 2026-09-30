@@ -12,7 +12,7 @@
 > 
 > \> 方向：地球探测信息与技术、勘查地球物理、数字岩心、图像处理、机器视觉
 >
-### 教育经历
+## 教育经历
 
 - 2020.9-2023.6 地质资源与地质工程&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   &nbsp;&nbsp;&nbsp;西南石油大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**赵军**
@@ -21,7 +21,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;西南石油大学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**闵帆**
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教授博导
 
-### 校园经历
+## 校园经历
 
 - 2018.6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 安永大中华区 - 西南石油大学校园大使
 - 2021.4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 泰迪杯数据挖掘挑战赛全国二等奖
@@ -33,7 +33,7 @@
 - 2023.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 工信部-初级-人工智能工程师人认证
 - 2023.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 人社部-三级-人工智能训练师认证
 
-### 个人荣誉
+## 个人荣誉
 
 - 2022.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 中国人工智能学会会员 认证中级计算机视觉应用工程师
 - 2022.3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 百度飞桨AI达人训练营 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 优秀学员
@@ -41,7 +41,7 @@
 - 2022.8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 世界人工智能大赛组委会AI人才训练营 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   优秀学员
 
-### 兴趣爱好
+## 兴趣爱好
 
 - 姿态识别
 - 人脸三维重建
