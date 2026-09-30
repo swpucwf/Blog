@@ -9,6 +9,25 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css">
   <!-- Vue 主题附加（保持 v4 外观），必须加在 core 主题之后 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/vue.min.css">
+  <style>
+    /* 侧边栏资料列表自动编号。
+       依赖 docsify v5 运行时自己打的类：自定义导航链接 = a.page-link（自动目录是 a.section-link，天然排除），
+       带子列表且自身无链接的分组 = li.group。链接可能直接子于 li 也可能包在 li>p 里，两种都写。*/
+    .sidebar-nav li.group > ul { counter-reset: doc-l1; }
+    .sidebar-nav li.group > ul > li { counter-increment: doc-l1; }
+    .sidebar-nav li.group > ul > li > a.page-link::before,
+    .sidebar-nav li.group > ul > li > p > a.page-link::before {
+      content: counter(doc-l1) ". ";
+      color: var(--theme-color, currentColor);
+    }
+    .sidebar-nav li.group > ul > li > ul { counter-reset: doc-l2; }
+    .sidebar-nav li.group > ul > li > ul > li { counter-increment: doc-l2; }
+    .sidebar-nav li.group > ul > li > ul > li > a.page-link::before,
+    .sidebar-nav li.group > ul > li > ul > li > p > a.page-link::before {
+      content: counter(doc-l1) "." counter(doc-l2) " ";
+      color: var(--theme-color, currentColor);
+    }
+  </style>
 </head>
 <body>
   <div id="app"></div>
