@@ -10,21 +10,35 @@
   <!-- Vue 主题附加（保持 v4 外观），必须加在 core 主题之后 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/vue.min.css">
   <style>
-    /* 侧边栏资料列表自动编号。
-       依赖 docsify v5 运行时自己打的类：自定义导航链接 = a.page-link（自动目录是 a.section-link，天然排除），
-       带子列表且自身无链接的分组 = li.group。链接可能直接子于 li 也可能包在 li>p 里，两种都写。*/
-    .sidebar-nav li.group > ul { counter-reset: doc-l1; }
-    .sidebar-nav li.group > ul > li { counter-increment: doc-l1; }
-    .sidebar-nav li.group > ul > li > a.page-link::before,
-    .sidebar-nav li.group > ul > li > p > a.page-link::before {
+    /* 资料列表自动编号（顶层条目 1./2./3.，嵌套子项 1.1）。
+       只给 a.page-link 加号；docsify 自动生成的页内目录是 a.section-link，天然不会被叠加。
+       链接可能直接子于 li 也可能包在 li>p 里，两种都写。 */
+    .sidebar-nav > ul { counter-reset: doc-l1; }
+    .sidebar-nav > ul > li { counter-increment: doc-l1; }
+    .sidebar-nav > ul > li > a.page-link::before,
+    .sidebar-nav > ul > li > p > a.page-link::before {
       content: counter(doc-l1) ". ";
       color: var(--theme-color, currentColor);
     }
-    .sidebar-nav li.group > ul > li > ul { counter-reset: doc-l2; }
-    .sidebar-nav li.group > ul > li > ul > li { counter-increment: doc-l2; }
-    .sidebar-nav li.group > ul > li > ul > li > a.page-link::before,
-    .sidebar-nav li.group > ul > li > ul > li > p > a.page-link::before {
+    .sidebar-nav > ul > li > ul { counter-reset: doc-l2; }
+    .sidebar-nav > ul > li > ul > li { counter-increment: doc-l2; }
+    .sidebar-nav > ul > li > ul > li > a.page-link::before,
+    .sidebar-nav > ul > li > ul > li > p > a.page-link::before {
       content: counter(doc-l1) "." counter(doc-l2) " ";
+      color: var(--theme-color, currentColor);
+    }
+
+    /* 章节编号：只给 h2 自动编号，h3 保留正文里手写的 x.y（两者号段已校对一致）。
+       正文与侧边栏目录各用一套计数器，保证同一章在两处显示相同序号。 */
+    .markdown-section { counter-reset: body-h2; }
+    .markdown-section > h2 { counter-increment: body-h2; }
+    .markdown-section > h2::before {
+      content: counter(body-h2) ". ";
+    }
+    .app-sub-sidebar > li > ul { counter-reset: toc-h2; }
+    .app-sub-sidebar > li > ul > li { counter-increment: toc-h2; }
+    .app-sub-sidebar > li > ul > li > a.section-link::before {
+      content: counter(toc-h2) ". ";
       color: var(--theme-color, currentColor);
     }
   </style>

@@ -1,6 +1,4 @@
-- [首页](/)
-- 学习资料
-  - [OCR](/source/ocr/ocr)
-    - [OCR 开源项目](/source/ocr/readme)
-  - [数据增强](/source/数据增强/readme)
-  - [音视频开发](/source/音视频开发/C++开发)
+- [OCR](/source/ocr/ocr)
+  - [OCR 开源项目](/source/ocr/readme)
+- [数据增强](/source/数据增强/readme)
+- [音视频开发](/source/音视频开发/C++开发)
