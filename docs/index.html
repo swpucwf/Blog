@@ -44,6 +44,23 @@
         }
     }
   </script>
+  <!-- 自动刷新开关：在网址后加 ?autoreload=秒数 即可定时重载以加载最新内容（如 ?autoreload=5）。
+       仅对带该参数的开发者生效，普通访客不受影响；加时间戳绕过缓存。默认关闭。 -->
+  <script>
+    (function () {
+      var m = /[?&]autoreload=(\d+)/.exec(location.search);
+      if (!m) return;
+      var sec = Math.max(2, parseInt(m[1], 10) || 5);
+      setTimeout(function () {
+        var base = location.origin + location.pathname;
+        // 保留 autoreload 参数，替换/追加时间戳以绕过缓存，实现持续自动刷新
+        var clean = location.search.replace(/([?&])_ts=\d+(&?)/, '$1').replace(/[?&]$/, '');
+        var joiner = clean.indexOf('?') >= 0 ? '&' : '?';
+        // 保留 location.hash（docsify 用 hash 路由），刷新后停在当前页而非回首页
+        location.href = base + clean + joiner + '_ts=' + Date.now() + location.hash;
+      }, sec * 1000);
+    })();
+  </script>
  <!-- Put them above docsify.min.js -->
   <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
   <!-- full-text search -->
