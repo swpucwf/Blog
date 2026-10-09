@@ -9,6 +9,28 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css">
   <!-- Vue 主题附加（保持 v4 外观），必须加在 core 主题之后 -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/vue.min.css">
+  <style>
+    /* 简历排版优化（前端） */
+    .markdown-section { line-height: 1.85; }
+    .markdown-section p { margin: 0.7em 0; }
+    .markdown-section ul { margin: 0.7em 0; }
+    .markdown-section li { margin: 0.4em 0; }
+    /* 公司名（h3）与项目标题（h4）拉开层级，h4 加左侧强调条 */
+    .markdown-section h3 { margin-top: 1.8em; }
+    .markdown-section h4 {
+      margin-top: 1.6em; margin-bottom: 0.6em;
+      padding-left: 0.6em;
+      border-left: 3px solid var(--theme-color, #42b983);
+      font-size: 1.06em;
+    }
+    /* 联系方式：竖线 + 淡色卡片，更紧凑清晰 */
+    .markdown-section blockquote {
+      border-left: 4px solid var(--theme-color, #42b983);
+      background: rgba(66, 185, 131, 0.06);
+      padding: 0.9em 1.3em; margin: 1em 0;
+    }
+    .markdown-section blockquote p { margin: 0.3em 0; }
+  </style>
 </head>
 <body>
   <div id="app"></div>
