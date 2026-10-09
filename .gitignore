@@ -3,6 +3,7 @@
 
 # 本地环境变量文件，禁止入库
 .env
+.env.local
 
 # macOS
 .DS_Store
