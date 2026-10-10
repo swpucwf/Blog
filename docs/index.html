@@ -53,15 +53,24 @@
     }
     .markdown-section blockquote p { margin: 0.3em 0; }
 
-    /* 系列文章“上一篇/下一篇”导航（由自定义插件生成） */
-    .series-pager {
-      display: flex; justify-content: space-between; align-items: center;
-      gap: 1em; margin-top: 2.5em; padding-top: 1.2em;
-      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    /* 系列文章“上一篇/下一篇”导航（由自定义插件生成，卡片式） */
+    .series-pager { display: flex; gap: 16px; margin-top: 2.8em; }
+    .series-pager .pager-item {
+      flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 5px;
+      padding: 14px 18px; border: 1px solid #eaecef; border-radius: 10px;
+      text-decoration: none; color: inherit; transition: border-color .2s, box-shadow .2s;
     }
-    .series-pager a { text-decoration: none; color: var(--theme-color, #42b983); max-width: 46%; }
-    .series-pager a:hover { text-decoration: underline; }
-    .series-pager .pager-next { text-align: right; margin-left: auto; }
+    .series-pager .pager-item:hover {
+      border-color: var(--theme-color, #42b983);
+      box-shadow: 0 3px 12px rgba(66, 185, 131, 0.14);
+    }
+    .series-pager .pager-next { align-items: flex-end; text-align: right; }
+    .series-pager .pager-label { font-size: .82em; color: #9a9a9a; letter-spacing: .5px; }
+    .series-pager .pager-title {
+      font-size: 1em; font-weight: 500; color: var(--theme-color, #42b983);
+      max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .series-pager .pager-empty { visibility: hidden; }
   </style>
 </head>
 <body>
@@ -134,8 +143,8 @@
               var box = document.createElement('div');
               box.id = 'series-pager'; box.className = 'series-pager';
               box.innerHTML =
-                (prev ? '<a class="pager-prev" href="#' + prev.path + '">&larr; ' + prev.text + '</a>' : '<span class="pager-prev"></span>') +
-                (next ? '<a class="pager-next" href="#' + next.path + '">' + next.text + ' &rarr;</a>' : '<span class="pager-next"></span>');
+                (prev ? '<a class="pager-item pager-prev" href="#' + prev.path + '"><span class="pager-label">&larr; 上一篇</span><span class="pager-title">' + prev.text + '</span></a>' : '<span class="pager-item pager-empty"></span>') +
+                (next ? '<a class="pager-item pager-next" href="#' + next.path + '"><span class="pager-label">下一篇 &rarr;</span><span class="pager-title">' + next.text + '</span></a>' : '<span class="pager-item pager-empty"></span>');
               content.appendChild(box);
             });
           });
