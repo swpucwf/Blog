@@ -52,6 +52,16 @@
       padding: 0.9em 1.3em; margin: 1em 0;
     }
     .markdown-section blockquote p { margin: 0.3em 0; }
+
+    /* 系列文章“上一篇/下一篇”导航（由自定义插件生成） */
+    .series-pager {
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 1em; margin-top: 2.5em; padding-top: 1.2em;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .series-pager a { text-decoration: none; color: var(--theme-color, #42b983); max-width: 46%; }
+    .series-pager a:hover { text-decoration: underline; }
+    .series-pager .pager-next { text-align: right; margin-left: auto; }
   </style>
 </head>
 <body>
@@ -65,10 +75,6 @@
       subMaxLevel: 0,
       alias: {
           '/.*/_sidebar.md': '/_sidebar.md'
-      },
-      pagination: {
-          previousText: '上一章节',
-          nextText: '下一章节',
       },
       search: {
           paths: 'auto',
@@ -85,7 +91,56 @@
           color:'rgb(90,90,90)',
           language:'chinese',
           isExpected: true
+        },
+      // 自定义“上一篇/下一篇”分页插件：按当前文章所在目录的 README.md 链接顺序生成导航，
+      // 无需子侧边栏；以后每个新系列只要在其 README 里列出章节即可自动生效。
+      plugins: [
+        function seriesPager(hook, vm) {
+          var cache = { folder: null, links: null };
+          function clean(p) { return (p || '').split('?')[0].split('#')[0]; }
+          function folderOf(p) { var i = p.lastIndexOf('/'); return i <= 0 ? '' : p.substring(0, i); }
+          function fetchSeq(folder, cb) {
+            if (cache.folder === folder) { cb(cache.links); return; }
+            fetch(folder.substring(1) + '/README.md')
+              .then(function (r) { return r.ok ? r.text() : ''; })
+              .catch(function () { return ''; })
+              .then(function (md) {
+                var links = [], re = /\[([^\]]+)\]\((\/[^)\s]+?)\)/g, m;
+                while ((m = re.exec(md)) !== null) {
+                  links.push({ text: m[1], path: clean(m[2]).replace(/\.md$/, '') });
+                }
+                cache.folder = folder; cache.links = links;
+                cb(links);
+              });
+          }
+          hook.doneEach(function () {
+            var content = document.querySelector('.markdown-section');
+            if (!content) return;
+            var old = document.getElementById('series-pager');
+            if (old && old.parentNode) old.parentNode.removeChild(old);
+            var route;
+            try { route = clean(decodeURIComponent((location.hash || '').replace(/^#/, ''))); }
+            catch (e) { route = clean((location.hash || '').replace(/^#/, '')); }
+            if (!route || route === '/') return;
+            var folder = folderOf(route);
+            if (!folder) return;
+            fetchSeq(folder, function (links) {
+              var seq = [{ text: '返回目录', path: folder + '/README' }].concat(links);
+              var idx = -1;
+              for (var i = 0; i < seq.length; i++) { if (seq[i].path === route) { idx = i; break; } }
+              if (idx < 0) return;
+              var prev = idx > 0 ? seq[idx - 1] : null;
+              var next = idx < seq.length - 1 ? seq[idx + 1] : null;
+              var box = document.createElement('div');
+              box.id = 'series-pager'; box.className = 'series-pager';
+              box.innerHTML =
+                (prev ? '<a class="pager-prev" href="#' + prev.path + '">&larr; ' + prev.text + '</a>' : '<span class="pager-prev"></span>') +
+                (next ? '<a class="pager-next" href="#' + next.path + '">' + next.text + ' &rarr;</a>' : '<span class="pager-next"></span>');
+              content.appendChild(box);
+            });
+          });
         }
+      ]
     }
   </script>
   <!-- 自动刷新开关：在网址后加 ?autoreload=秒数 即可定时重载以加载最新内容（如 ?autoreload=5）。
@@ -112,7 +167,6 @@
   <!-- code render-->
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@3/dist/docsify-copy-code.min.js"></script>
   <!-- reading time / word count -->
   <script src="//cdn.jsdelivr.net/npm/docsify-count@1/dist/countable.min.js"></script>
