@@ -4,6 +4,7 @@
 > 如果不是为了让她哭，那么卷人又有什么意义？
 
 [CSDN](https://blog.csdn.net/weixin_42917352?spm=1000.2115.3001.5343)
+[视频结构化](#/source/视频结构化/1-认识视频结构化)
 
 email: swpucwf@126.com
 
