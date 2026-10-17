@@ -113,6 +113,12 @@
       // 自定义“上一篇/下一篇”分页插件：按当前文章所在目录的 README.md 链接顺序生成导航，
       // 无需子侧边栏；以后每个新系列只要在其 README 里列出章节即可自动生效。
       plugins: [
+        // CSDN 图床防盗链：带 Referer 的请求会 403，渲染时给所有 img 加 no-referrer 策略
+        function noReferrerImages(hook) {
+          hook.afterEach(function (html) {
+            return html.replace(/<img\s/gi, '<img referrerpolicy="no-referrer" ');
+          });
+        },
         function seriesPager(hook, vm) {
           var cache = { folder: null, links: null };
           function clean(p) { return (p || '').split('?')[0].split('#')[0]; }
