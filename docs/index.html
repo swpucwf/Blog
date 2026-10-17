@@ -53,6 +53,17 @@
     }
     .markdown-section blockquote p { margin: 0.3em 0; }
 
+    /* 侧边栏分组可折叠（docsify-sidebar-collapse）：只引插件 JS，不引它自带的 CSS（会把 li 边距归零破坏缩进），
+       用以下自写样式在分组父项右侧显示 +/- 折叠指示 */
+    .sidebar-nav li.folder { position: relative; cursor: pointer; }
+    .sidebar-nav li.folder::after {
+      content: '+';
+      position: absolute; top: 11px; right: 10px;
+      transform: translateY(-50%);
+      color: #a4a4ac; font-size: 15px;
+    }
+    .sidebar-nav li.folder.open::after { content: '\2212'; } /* 展开状态显示减号 */
+
     /* 系列文章“上一篇/下一篇”导航（由自定义插件生成，卡片式） */
     .series-pager { display: flex; gap: 16px; margin-top: 2.8em; }
     .series-pager .pager-item {
@@ -82,6 +93,8 @@
       auto2top: true,
       coverpage: true,
       subMaxLevel: 0,
+      // 侧边栏折叠（docsify-sidebar-collapse）：分组父项可点击展开/收缩，默认展开到第 1 层
+      sidebarDisplayLevel: 1,
       alias: {
           '/.*/_sidebar.md': '/_sidebar.md'
       },
@@ -196,6 +209,8 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/zoom-image.min.js"></script>
   <!-- 阅读进度条（docsify-progress）：默认挂在侧边栏顶部，随滚动显示当前文章阅读进度 -->
   <script src="//cdn.jsdelivr.net/npm/docsify-progress@1.0.3/dist/progress.min.js"></script>
+  <!-- 侧边栏目录折叠：支持分组父项点击展开/收缩（注意不要引入其自带 sidebar.min.css） -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
   <!-- code render-->
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
