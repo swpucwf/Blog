@@ -101,6 +101,15 @@
           language:'chinese',
           isExpected: true
         },
+      // 提示框插件（flexible-alerts）：把 `> [!TIP]` 等引用块渲染成彩色提示框，标签用中文
+      'flexible-alerts': {
+        style: 'callout',
+        note:      { label: '说明' },
+        tip:       { label: '技巧' },
+        warning:   { label: '注意' },
+        important: { label: '重要' },
+        attention: { label: '警告' }
+      },
       // 自定义“上一篇/下一篇”分页插件：按当前文章所在目录的 README.md 链接顺序生成导航，
       // 无需子侧边栏；以后每个新系列只要在其 README 里列出章节即可自动生效。
       plugins: [
@@ -175,6 +184,12 @@
   <script src="//cdn.jsdelivr.net/npm/@sy-records/docsify-pangu@2"></script>
   <!-- full-text search -->
   <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
+  <!-- 提示框：将 `> [!NOTE]` / `> [!TIP]` 等引用块转为彩色 alert（已支持 docsify v5） -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@2"></script>
+  <!-- 图片点击放大（docsify 官方插件，基于 medium-zoom；给 img 加 .no-zoom 类可单独禁用） -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/zoom-image.min.js"></script>
+  <!-- 阅读进度条（docsify-progress）：默认挂在侧边栏顶部，随滚动显示当前文章阅读进度 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-progress@1.0.3/dist/progress.min.js"></script>
   <!-- code render-->
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
