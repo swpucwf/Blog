@@ -6,6 +6,7 @@
 
 - [1-1 现代agent介绍](/source/agent深入理解/1-1-现代agent介绍)
 - [1-2 Harness工程](/source/agent深入理解/1-2-Harness工程)
+- [1-3 Agent工程决策十问](/source/agent深入理解/1-3-Agent工程决策十问)
 
 - [2-1 上下文工程介绍](/source/agent深入理解/2-1-上下文工程介绍)
 - [2-2 Agent如何调用大模型](/source/agent深入理解/2-2-Agent如何调用大模型)
