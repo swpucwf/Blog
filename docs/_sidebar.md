@@ -2,7 +2,9 @@
 - 计算机视觉
   - [1.传统CV算法](/source/传统CV算法/README)
   - [2.视频结构化](/source/视频结构化/README)
-- [agent深入理解](/source/agent深入理解/README)
+- [agent](/source/agent/README)
+  - [Agent 深入理解](/source/agent/深入理解/README)
+  - [RAG 检索增强](/source/agent/RAG/README)
 - [论文阅读](/source/论文阅读/README)
 - vibecoding
   - [VibeCoding 基础篇](/source/vibecoding/README)
