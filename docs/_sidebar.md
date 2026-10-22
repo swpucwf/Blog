@@ -2,9 +2,11 @@
 - 计算机视觉
   - [1.传统CV算法](/source/传统CV算法/README)
   - [2.视频结构化](/source/视频结构化/README)
+- [GPU 算子优化](/source/GPU算子优化/README)
 - [agent](/source/agent/README)
   - [Agent 深入理解](/source/agent/深入理解/README)
   - [RAG 检索增强](/source/agent/RAG/README)
+  - [RAG 全栈](/source/agent/RAG全栈/README)
   - [Deep Agents 实战](/source/agent/deepagents/README)
 - [大模型](/source/大模型/README)
   - [NLP与Transformer理论](/source/大模型/理论篇/README)
