@@ -13,6 +13,7 @@
   - [模型部署工程](/source/大模型/部署工程篇/README)
   - [大模型安全](/source/大模型/安全篇/README)
   - [多模态前沿](/source/大模型/多模态篇/README)
+  - [多模态大模型实战](/source/大模型/多模态大模型实战/README)
 - [论文阅读](/source/论文阅读/README)
 - vibecoding
   - [VibeCoding 基础篇](/source/vibecoding/README)
