@@ -13,10 +13,10 @@
 - [5-任务规划与分解](/source/agent/deepagents/5-任务规划与分解)
 - [6-子Agent与上下文隔离](/source/agent/deepagents/6-子Agent与上下文隔离)
 - [7-异步子Agent](/source/agent/deepagents/7-异步子Agent)
-
-<!-- 按课程顺序撰写后登记：
 - [8-Skills能力包](/source/agent/deepagents/8-Skills能力包)
 - [9-长期记忆](/source/agent/deepagents/9-长期记忆)
+
+<!-- 按课程顺序撰写后登记：
 - [10-Human-in-the-Loop](/source/agent/deepagents/10-Human-in-the-Loop)
 - [11-沙箱执行](/source/agent/deepagents/11-沙箱执行)
 - [12-文件系统权限](/source/agent/deepagents/12-文件系统权限)
