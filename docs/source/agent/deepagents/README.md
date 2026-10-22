@@ -11,10 +11,10 @@
 - [3-快速上手](/source/agent/deepagents/3-快速上手)
 - [4-虚拟文件系统](/source/agent/deepagents/4-虚拟文件系统)
 - [5-任务规划与分解](/source/agent/deepagents/5-任务规划与分解)
-
-<!-- 按课程顺序撰写后登记：
 - [6-子Agent与上下文隔离](/source/agent/deepagents/6-子Agent与上下文隔离)
 - [7-异步子Agent](/source/agent/deepagents/7-异步子Agent)
+
+<!-- 按课程顺序撰写后登记：
 - [8-Skills能力包](/source/agent/deepagents/8-Skills能力包)
 - [9-长期记忆](/source/agent/deepagents/9-长期记忆)
 - [10-Human-in-the-Loop](/source/agent/deepagents/10-Human-in-the-Loop)
