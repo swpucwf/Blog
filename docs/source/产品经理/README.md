@@ -10,6 +10,4 @@
 - [4-双钻模型笔记](/source/产品经理/4-双钻模型笔记)
 - [5-AI 产品经理实战笔记](/source/产品经理/5-AI产品经理实战笔记)
 
-## 关于本专栏
-
-本专栏不是原文搬运。内容源自对开源教程 [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) Stage-1 产品经理部分（如何判断一个好点子、Jobs to Be Done、The Mom Test、双钻模型）的整读，把其中「产品经理视角」的论点抽出来，按主题各重写成一篇笔记。原文中的故事细节、练习与配图未保留，若要深读请回原始出处。
+> 内容整理自开源教程 [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe)，作为参考笔记。
