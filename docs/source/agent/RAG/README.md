@@ -2,7 +2,7 @@
 
 > agent 专栏 · 子系列二：检索增强生成（RAG）实战——从 RAG 核心原理与技术演进，到用 LangGraph 搭建企业级客服 Agent、用 LlamaIndex 落地企业知识库。
 >
-> 内容整理自开源教程 [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) 进阶开发（Stage-3 · AI 进阶）章节，已适配本站排版。
+> 内容整理自开源教程 [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe)。
 
 ## 目录
 
