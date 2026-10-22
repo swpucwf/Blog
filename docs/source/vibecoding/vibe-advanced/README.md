@@ -15,13 +15,10 @@
 - [7-后端API：从CRUD到可用的服务接口](/source/vibecoding/vibe-advanced/7-后端API)
 - [8-认证与安全：谁能访问我的数据](/source/vibecoding/vibe-advanced/8-认证与安全)
 - [9-测试与自动化：给项目一张安全网](/source/vibecoding/vibe-advanced/9-测试与自动化)
-
-<!-- 按来源章节顺序计划中：
-- [10-本地服务公网访问](…/10-本地服务公网访问)
-- [11-Git协作](…/11-Git协作)
-- [12-Serverless部署与CI-CD](…/12-Serverless部署与CI-CD)
-- [13-域名与DNS](…/13-域名与DNS)
-- [14-VPS运维与部署](…/14-VPS运维与部署)
-- [15-SEO与分析](…/15-SEO与分析)
-- [16-用户反馈与迭代](…/16-用户反馈与迭代)
--->
+- [10-本地服务公网访问](/source/vibecoding/vibe-advanced/10-本地服务公网访问)
+- [11-Git协作：版本控制与多人开发](/source/vibecoding/vibe-advanced/11-Git协作)
+- [12-Serverless部署与CI-CD](/source/vibecoding/vibe-advanced/12-Serverless部署与CI-CD)
+- [13-域名与DNS：给站点一个正式地址](/source/vibecoding/vibe-advanced/13-域名与DNS)
+- [14-VPS运维与部署](/source/vibecoding/vibe-advanced/14-VPS运维与部署)
+- [15-SEO与分析：让网站被找到被理解](/source/vibecoding/vibe-advanced/15-SEO与分析)
+- [16-用户反馈与产品迭代](/source/vibecoding/vibe-advanced/16-用户反馈与迭代)
