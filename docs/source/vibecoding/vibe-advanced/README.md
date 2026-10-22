@@ -6,21 +6,22 @@
 
 ## 目录
 
-<!-- 按来源章节顺序撰写后登记，格式示例：
-- [1-环境搭建](/source/vibecoding/vibe-advanced/1-环境搭建)
-- [2-AI调优指南](/source/vibecoding/vibe-advanced/2-AI调优指南)
-- [3-PRD文档驱动开发](/source/vibecoding/vibe-advanced/3-PRD文档驱动开发)
-- [4-开发基础](/source/vibecoding/vibe-advanced/4-开发基础)
-- [5-UI与UX设计](/source/vibecoding/vibe-advanced/5-UI与UX设计)
-- [6-数据持久化与数据库](/source/vibecoding/vibe-advanced/6-数据持久化与数据库)
-- [7-后端API](/source/vibecoding/vibe-advanced/7-后端API)
-- [8-认证与安全](/source/vibecoding/vibe-advanced/8-认证与安全)
-- [9-测试与自动化](/source/vibecoding/vibe-advanced/9-测试与自动化)
-- [10-本地服务公网访问](/source/vibecoding/vibe-advanced/10-本地服务公网访问)
-- [11-Git协作](/source/vibecoding/vibe-advanced/11-Git协作)
-- [12-Serverless部署与CI-CD](/source/vibecoding/vibe-advanced/12-Serverless部署与CI-CD)
-- [13-域名与DNS](/source/vibecoding/vibe-advanced/13-域名与DNS)
-- [14-VPS运维与部署](/source/vibecoding/vibe-advanced/14-VPS运维与部署)
-- [15-SEO与分析](/source/vibecoding/vibe-advanced/15-SEO与分析)
-- [16-用户反馈与迭代](/source/vibecoding/vibe-advanced/16-用户反馈与迭代)
+- [1-环境搭建：从零到本地可运行](/source/vibecoding/vibe-advanced/1-环境搭建)
+- [2-AI调优指南：经济性、工作流与扩展能力](/source/vibecoding/vibe-advanced/2-AI调优指南)
+- [3-PRD文档驱动开发：从想法到可执行规格](/source/vibecoding/vibe-advanced/3-PRD文档驱动开发)
+- [4-开发基础：从代码运行到API与文档](/source/vibecoding/vibe-advanced/4-开发基础)
+
+<!-- 按来源章节顺序计划中：
+- [5-UI与UX设计](…/5-UI与UX设计)
+- [6-数据持久化与数据库](…/6-数据持久化与数据库)
+- [7-后端API](…/7-后端API)
+- [8-认证与安全](…/8-认证与安全)
+- [9-测试与自动化](…/9-测试与自动化)
+- [10-本地服务公网访问](…/10-本地服务公网访问)
+- [11-Git协作](…/11-Git协作)
+- [12-Serverless部署与CI-CD](…/12-Serverless部署与CI-CD)
+- [13-域名与DNS](…/13-域名与DNS)
+- [14-VPS运维与部署](…/14-VPS运维与部署)
+- [15-SEO与分析](…/15-SEO与分析)
+- [16-用户反馈与迭代](…/16-用户反馈与迭代)
 -->
