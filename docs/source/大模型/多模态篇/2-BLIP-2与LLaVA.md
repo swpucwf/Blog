@@ -99,6 +99,28 @@ LLaVA 架构非常简洁：
 
 > **补记**：两种范式的对比值得记住——BLIP-2 是「**少训**」路线：冻结两端、只训 188M 的 Q-Former，用信息瓶颈换取极低训练成本，但生成能力受预训练目标限制；LLaVA 是「**换数据**」路线：架构极简（一个线性投影层），把成本从「结构设计」转移到「指令数据构建」（GPT-4 蒸馏 158K 条），换来助手式的对话与推理能力。这也预示了一个趋势：多模态模型的竞争，正在从「怎么连」转向「数据怎么造」。
 
+### 2.4 投影层到底长什么样
+
+跨模态对齐在代码层面比名字朴素得多：LLaVA 原版只用一个线性层，后续改进版换成两层 MLP，参数量在百万级，相对 7B 级 LLM 几乎可以忽略：
+
+```python
+import torch.nn as nn
+
+# 视觉特征 1024 维（如 CLIP ViT-L/14 输出），LLM 词嵌入 4096 维
+projector_linear = nn.Linear(1024, 4096)          # LLaVA 1.0 的做法
+
+projector_mlp = nn.Sequential(                    # LLaVA 1.5 起的做法
+    nn.Linear(1024, 4096),
+    nn.GELU(),
+    nn.Linear(4096, 4096),
+)
+
+# vision_features: (batch, num_tokens, 1024) -> llm_input: (batch, num_tokens, 4096)
+llm_input = projector_mlp(vision_features)
+```
+
+两层的差别不在表达力上限，而在训练稳定性与收敛速度。这也解释了为什么「对齐」阶段可以只训投影层：它承担的是坐标系换算，不承担语义理解——语义理解已经由冻结的视觉编码器与 LLM 各自完成。
+
 ## 写在最后
 
 BLIP-2 与 LLaVA 仍属于「连接」范式——视觉编码器与 LLM 各自独立、靠适配器拼接。下一篇[原生统一架构与简化Omni](3-原生统一架构与简化Omni)看 Flamingo、Chameleon、GPT-4o 如何走向单一网络，并用 Chameleon 的「一切皆 Token」思路亲手搭一个简化版 Omni。
