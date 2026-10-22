@@ -9,3 +9,4 @@
 - vibecoding
   - [VibeCoding 基础篇](/source/vibecoding/README)
   - [Claude Code 完全指南](/source/vibecoding/claude/README)
+- [产品经理](/source/产品经理/README)
