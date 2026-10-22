@@ -6,11 +6,9 @@
 
 ## 目录
 
-<!-- 按来源章节顺序撰写后登记，格式示例：
 - [1-PEFT综述与LoRA详解](/source/大模型/微调量化篇/1-PEFT综述与LoRA详解)
 - [2-LoRA实战与Qwen2.5微调](/source/大模型/微调量化篇/2-LoRA实战与Qwen2.5微调)
 - [3-RLHF技术详解](/source/大模型/微调量化篇/3-RLHF技术详解)
 - [4-LLaMA-Factory DPO实战](/source/大模型/微调量化篇/4-LLaMA-Factory-DPO实战)
 - [5-模型量化实战](/source/大模型/微调量化篇/5-模型量化实战)
 - [6-DeepSpeed框架介绍](/source/大模型/微调量化篇/6-DeepSpeed框架介绍)
--->
