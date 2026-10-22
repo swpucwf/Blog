@@ -93,6 +93,23 @@
     body.cover-page .sidebar-toggle {
       opacity: 0; visibility: hidden;
     }
+
+    /* ===== Mermaid 流程图 ===== */
+    .markdown-section .mermaid {
+      margin: 1.4em 0;
+      padding: 1em;
+      text-align: center;
+      overflow-x: auto;
+      background: #fafbfc;
+      border: 1px solid #eaecef;
+      border-radius: 8px;
+    }
+    .markdown-section .mermaid svg { max-width: 100%; height: auto; }
+    /* 单个图语法出错时保留源码，不影响其它图渲染 */
+    .markdown-section .mermaid-error {
+      text-align: left; font-family: var(--code-font-family); font-size: .9em;
+      white-space: pre; color: #b42318;
+    }
   </style>
 </head>
 <body>
@@ -141,6 +158,90 @@
         function noReferrerImages(hook) {
           hook.afterEach(function (html) {
             return html.replace(/<img\s/gi, '<img referrerpolicy="no-referrer" ');
+          });
+        },
+        // Mermaid 流程图：把 ```mermaid 代码块替换成 SVG。仅当当前页存在图时按需加载 mermaid，
+        // 避免每个页面都加载体积较大的渲染库；加载失败时保留原始代码块，不影响阅读。
+        function mermaidRender(hook) {
+          var loading = false, queue = [];
+          function findBlocks() {
+            var pres = document.querySelectorAll('.markdown-section pre');
+            var out = [];
+            for (var i = 0; i < pres.length; i++) {
+              var pre = pres[i], code = pre.querySelector('code');
+              var flag = ((pre.getAttribute('data-lang') || '') + ' ' + pre.className + ' ' +
+                          (code ? code.className : '')).toLowerCase();
+              if (flag.indexOf('mermaid') !== -1) out.push(pre);
+            }
+            return out;
+          }
+          function markError(node, err) {
+            node.classList.add('mermaid-error');
+            console.warn('[mermaid] 渲染失败', err);
+          }
+          function draw() {
+            if (window.__mermaidLoadFailed) return;
+            var blocks = findBlocks();
+            if (!blocks.length) return;
+            if (!window.mermaid) { load(draw); return; }
+            if (!window.__mermaidInited) {
+              window.mermaid.initialize({
+                startOnLoad: false,
+                securityLevel: 'loose',
+                theme: 'default',
+                fontFamily: '"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif'
+              });
+              window.__mermaidInited = true;
+            }
+            var nodes = [];
+            for (var i = 0; i < blocks.length; i++) {
+              var pre = blocks[i], code = pre.querySelector('code');
+              var div = document.createElement('div');
+              div.className = 'mermaid';
+              div.textContent = (code || pre).textContent;
+              pre.parentNode.replaceChild(div, pre);
+              nodes.push(div);
+            }
+            // 逐图渲染并隔离错误：一张图语法有误不影响其它图
+            (function next(i) {
+              if (i >= nodes.length) return;
+              var p;
+              try { p = window.mermaid.run({ nodes: [nodes[i]] }); }
+              catch (e) { markError(nodes[i], e); next(i + 1); return; }
+              Promise.resolve(p).then(function () { next(i + 1); }, function (e) {
+                markError(nodes[i], e); next(i + 1);
+              });
+            })(0);
+          }
+          function load(cb) {
+            queue.push(cb);
+            if (loading) return;
+            loading = true;
+            var urls = [
+              '//cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js',
+              '//unpkg.com/mermaid@11/dist/mermaid.min.js',
+              '//registry.npmmirror.com/mermaid/11/files/dist/mermaid.min.js'
+            ];
+            (function tryNext(i) {
+              if (i >= urls.length) {
+                loading = false;
+                window.__mermaidLoadFailed = true;
+                console.warn('[mermaid] 加载失败，保留原始代码块');
+                return;
+              }
+              var s = document.createElement('script');
+              s.src = urls[i];
+              s.onload = function () {
+                loading = false;
+                var list = queue; queue = [];
+                for (var j = 0; j < list.length; j++) list[j]();
+              };
+              s.onerror = function () { if (s.parentNode) s.parentNode.removeChild(s); tryNext(i + 1); };
+              document.head.appendChild(s);
+            })(0);
+          }
+          hook.doneEach(function () {
+            window.setTimeout(function () { if (findBlocks().length) draw(); }, 0);
           });
         },
         function seriesPager(hook, vm) {
