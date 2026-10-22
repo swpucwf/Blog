@@ -4,8 +4,12 @@
 
 ## 目录
 
-- [1-AI 产品经理笔记](/source/产品经理/1-AI产品经理笔记)
+- [1-如何判断一个好点子](/source/产品经理/1-如何判断一个好点子)
+- [2-双钻模型笔记](/source/产品经理/2-双钻模型笔记)
+- [3-JTBD 需求理论笔记](/source/产品经理/3-JTBD需求理论笔记)
+- [4-Mom Test 用户访谈笔记](/source/产品经理/4-MomTest用户访谈笔记)
+- [5-AI 产品经理实战笔记](/source/产品经理/5-AI产品经理实战笔记)
 
 ## 关于本专栏
 
-本专栏不是原文搬运。内容源自对开源教程 [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) Stage-1 产品经理部分（如何判断一个好点子、双钻模型、Jobs to Be Done、The Mom Test 等）的整读，把其中「产品经理视角」的论点抽出来，按自己的理解重写成一篇笔记。原文中的故事细节、练习与配图未保留，若要深读请回原始出处。
+本专栏不是原文搬运。内容源自对开源教程 [datawhalechina/easy-vibe](https://github.com/datawhalechina/easy-vibe) Stage-1 产品经理部分（如何判断一个好点子、双钻模型、Jobs to Be Done、The Mom Test）的整读，把其中「产品经理视角」的论点抽出来，按主题各重写成一篇笔记。原文中的故事细节、练习与配图未保留，若要深读请回原始出处。
