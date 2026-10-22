@@ -4,7 +4,7 @@ trigger: always_on
 
 # 博客笔记编写规范
 
-适用于 d:\Blog 博客（docsify 站点，内容位于 docs/source/）新增、迁移或改写任何文章时，必须遵守以下规则。
+适用于 博客（docsify 站点，内容位于 docs/source/）新增、迁移或改写任何文章时，必须遵守以下规则。
 
 ## 1. 笔记口吻（非教程）
 
@@ -33,4 +33,12 @@ trigger: always_on
 ## 4. 配图与提交
 
 - 图片统一走图床 `https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/<文件名>`；删本地图前校验 `\]\(images/` 与本地 assets 引用计数为 0。
-- 每批内容改动校验（无本地图片、无断链、口吻合规）后提交；推送需用户单独下达指令（经本机代理 127.0.0.1:17890）。
+- 每批内容改动校验（无本地图片、无断链、口吻合规）后提交；每解决完一个问题（一项独立改动），无需等待另行指示，直接按功能分组 git 提交，提交信息遵循仓库规范 `<模块>: <祈使句摘要>`；推送仍须用户单独下达指令。
+- 推送代理等本机环境信息一律不写进本规则：本仓库代理已配置为 git repo-local（`git config --local http.proxy`，随 `.git` 目录走，整目录拷贝即恢复）；需要代理端口、直连/强推命令时，从本机 `.env.local` 或 `git config --local -l` 查询，若 `.env.local` 缺失则按下文「换机恢复」重建。
+
+## 5. 换机恢复（环境信息不入库时的自助路径）
+
+- 机器无关的信息都在仓库里，clone 即得：内容在 `docs/source/`、图床地址见本规则第 4 节、远程地址见 `git remote -v`。
+- 若使用 GitHub HTTPS 推送且需免密，可将认证嵌入 repo-local 的 remote URL 或改用 SSH remote，二者均不进入跟踪文件；个人访问令牌等凭据只放本机 `.env.local`（已被忽略），严禁写入任何入库文件。
+- `.env.local` 为本机开发备注，缺失时重建，至少记录：代理软件本地 HTTP 端口、`git config --local http(s).proxy` 设置命令、临时直连推送命令（`git -c http.proxy= -c https.proxy= push`）。
+- 本地预览：仓库为 docsify 静态站，内容根为 `docs/`，任选一种静态服务启动（如 `npx docsify-cli serve docs` 或 `python -m http.server -d docs`）。
