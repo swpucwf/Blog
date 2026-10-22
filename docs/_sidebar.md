@@ -16,4 +16,7 @@
 - vibecoding
   - [VibeCoding 基础篇](/source/vibecoding/README)
   - [Claude Code 完全指南](/source/vibecoding/claude/README)
+  - [Vibe Vibe 基础篇](/source/vibecoding/vibe-basic/README)
+  - [Vibe Vibe 进阶篇](/source/vibecoding/vibe-advanced/README)
+  - [Vibe Vibe 实践篇](/source/vibecoding/vibe-practice/README)
 - [产品经理](/source/产品经理/README)

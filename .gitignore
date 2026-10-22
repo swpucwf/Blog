@@ -13,3 +13,4 @@ base-llm-main
 # 本地图片上传暂存与临时脚本，不入库
 _img_upload/
 _tmp_*.py
+vibe-vibe-main
