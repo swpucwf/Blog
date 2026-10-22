@@ -6,9 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css">
+  <!-- 全部静态依赖自托管于 vendor/：jsdelivr 在部分网络下不可达，避免 CDN 失败导致整页白屏 -->
+  <link rel="stylesheet" href="vendor/docsify/themes/core.min.css">
   <!-- Vue 主题附加（保持 v4 外观），必须加在 core 主题之后 -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/vue.min.css">
+  <link rel="stylesheet" href="vendor/docsify/themes/addons/vue.min.css">
   <style>
     /* ===== 字体协调 ===== */
     :root {
@@ -218,7 +219,7 @@
             if (loading) return;
             loading = true;
             var urls = [
-              '//cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js',
+              'vendor/mermaid/mermaid.min.js',
               '//unpkg.com/mermaid@11/dist/mermaid.min.js',
               '//registry.npmmirror.com/mermaid/11/files/dist/mermaid.min.js'
             ];
@@ -332,30 +333,30 @@
     })();
   </script>
  <!-- Put them above docsify.min.js -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/docsify.min.js"></script>
+  <script src="vendor/docsify/docsify.min.js"></script>
   <!-- 中英文/数字/符号之间自动添加空格（pangu.js） -->
-  <script src="//cdn.jsdelivr.net/npm/@sy-records/docsify-pangu@2"></script>
+  <script src="vendor/pangu/docsify-pangu.min.js"></script>
   <!-- full-text search -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/search.min.js"></script>
-  <!-- 提示框：将 `> [!NOTE]` / `> [!TIP]` 等引用块转为彩色 alert（已支持 docsify v5） -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts@2"></script>
+  <script src="vendor/docsify/plugins/search.min.js"></script>
+  <!-- 提示框：将 `> [!NOTE]` / `> [!TIP]` 等引用块转为彩色 alert -->
+  <script src="vendor/flexible-alerts/docsify-plugin-flexible-alerts.min.js"></script>
   <!-- 图片点击放大（docsify 官方插件，基于 medium-zoom；给 img 加 .no-zoom 类可单独禁用） -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@5/dist/plugins/zoom-image.min.js"></script>
+  <script src="vendor/docsify/plugins/zoom-image.min.js"></script>
   <!-- 阅读进度条（docsify-progress）：默认挂在侧边栏顶部，随滚动显示当前文章阅读进度 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-progress@1.0.3/dist/progress.min.js"></script>
+  <script src="vendor/progress/progress.min.js"></script>
   <!-- 侧边栏目录折叠：支持分组父项点击展开/收缩（注意不要引入其自带 sidebar.min.css） -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+  <script src="vendor/sidebar-collapse/docsify-sidebar-collapse.min.js"></script>
   <!-- code render-->
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code@3/dist/docsify-copy-code.min.js"></script>
+  <script src="vendor/prism/prism-bash.min.js"></script>
+  <script src="vendor/prism/prism-python.min.js"></script>
+  <script src="vendor/copy-code/docsify-copy-code.min.js"></script>
   <!-- reading time / word count -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-count@1/dist/countable.min.js"></script>
+  <script src="vendor/count/countable.min.js"></script>
 
-  <script src="//cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"></script>
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css" />
+  <script src="vendor/katex/katex.min.js"></script>
+  <link rel="stylesheet" href="vendor/katex/katex.min.css" />
   <!-- docsify 已将内部 marked 暴露为 window.marked，此处不可再单独引入 marked，否则 search 插件解析表格时报错 -->
-  <!-- CDN files for docsify-katex -->
-  <script src="//cdn.jsdelivr.net/npm/docsify-katex@2/dist/docsify-katex.js"></script>
+  <!-- 本地自托管 katex 与 docsify-katex，字体随 css 从 vendor/katex/fonts 加载 -->
+  <script src="vendor/katex/docsify-katex.js"></script>
 </body>
 </html>
