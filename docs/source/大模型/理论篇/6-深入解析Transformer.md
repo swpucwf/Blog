@@ -211,13 +211,13 @@ tgt_mask = tgt_pad_mask & tgt_subsequent_mask.unsqueeze(0)          # 两者取�
 
 `main.py` 以 `src_vocab=tgt_vocab=100, dim=512, n_heads=8, n_layers=6, hidden_dim=2048` 组装，随机喂 `src (2,10)`、`tgt (2,12)`，输出形状 `[2, 12, 100]`——batch、目标长度、词表三维全部符合预期。各组件单测同样以形状断言收尾（PE/MHA/FFN/LN 输入输出均 `(2,10,512)`）。
 
-> **补记**：把本章串成一条「如果只用注意力，还缺什么」的清单更便于记忆——位置无关 → 位置编码；单视角 → 多头；深层难训 → 残差+LN；未来泄漏 → 因果掩码；pad 噪声 → 填充掩码；推理重复计算 → KV 缓存。Transformer 论文的贡献不是发明了注意力，而是把「纯注意力也能组成完整序列模型」这件事一次性做成了工程闭环，此后 NLP 进入「架构统一、参数Scaling」的时代。
+> **补记**：把全文串成一条「如果只用注意力，还缺什么」的清单更便于记忆——位置无关 → 位置编码；单视角 → 多头；深层难训 → 残差+LN；未来泄漏 → 因果掩码；pad 噪声 → 填充掩码；推理重复计算 → KV 缓存。Transformer 论文的贡献不是发明了注意力，而是把「纯注意力也能组成完整序列模型」这件事一次性做成了工程闭环，此后 NLP 进入「架构统一、参数Scaling」的时代。
 
-## 练习（源教程）
+## 练习
 
 - 按源教程目录结构自行实现 PositionalEncoding、MultiHeadAttention、FeedForward、LayerNorm 四个组件并组装 Transformer，以形状测试驱动验证。
 
-## 参考（源教程引注）
+## 参考文献
 
 - Vaswani, A. et al. (2017). *Attention Is All You Need*. NeurIPS
 - Hendrycks, D. & Gimpel, K. (2016). *Gaussian Error Linear Units (GELUs)*

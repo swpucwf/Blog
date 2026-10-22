@@ -207,9 +207,7 @@ outputs, (hidden, cell) = self.rnn(rnn_input, (hidden, cell))
 
 > **补记**：本篇两个架构的因果链值得再压一遍——Seq2Seq 把「转换」拆成理解（编码为 $C$）+生成（条件语言模型），但 $C$ 是定长瓶颈；固定对齐太脆 → 加权求和太泛 → 需要「会动态分配的权重」→ 注意力；注意力再抽象一步就是 QKV 检索范式，下一步把 Q/K/V 全部换成序列自己，就是 Transformer 的自注意力。
 
-## 练习（源教程无，略）
-
-## 参考（源教程引注）
+## 参考文献
 
 - Sutskever, I. et al. (2014). *Sequence to sequence learning with neural networks*. NeurIPS
 - Cho, K. et al. (2014). *Learning phrase representations using RNN encoder-decoder*. EMNLP

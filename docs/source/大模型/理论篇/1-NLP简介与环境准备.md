@@ -110,7 +110,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 > **补记**：安装截图类内容在此处从简——各步骤界面均为向导式普通操作，照文字要点走即可；源教程 `chapter1/images/` 下有 6 张对应截图可按需查阅。
 
-## 参考（源教程引注）
+## 参考文献
 
 - Manning, C. (2024). *CS224N: Natural Language Processing with Deep Learning*. Stanford University
 - Turing, A. M. (1950). *Computing Machinery and Intelligence*. Mind, 59(236), 433-460
