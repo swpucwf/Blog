@@ -8,7 +8,7 @@
 
 > 类比：Skills 之于 AI Agent，就像 npm 包之于 Node.js——标准化的能力分发与复用机制。写一个 Skill，可以在所有兼容产品里用。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_19-infographic-skills-ecosystem.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_19-infographic-skills-ecosystem.png)
 
 <p>图 1：Agent Skills 生态</p>
 
@@ -83,7 +83,7 @@ description: 当用户询问 LangGraph 的节点定义、状态管理、中断�
 
 Skills 最关键的决策是**渐进式披露**——不是一次把所有内容塞给 Agent，而是分层加载。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_20-framework-skill-structure.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_20-framework-skill-structure.png)
 
 <p>图 2：元数据 → 核心指令 → 辅助资源</p>
 
@@ -99,7 +99,7 @@ https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_20-fra
 2. **读取**：用户请求后，Agent 按 description 判断是否需要，再调用 `read_file` 读 `SKILL.md`；
 3. **执行**：按正文指令工作；引用到 `references/`、`assets/` 时，Agent 自行决定是否读取。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_21-flowchart-progressive-disclosure.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_21-flowchart-progressive-disclosure.png)
 
 <p>图 3：匹配与加载流程</p>
 
@@ -107,7 +107,7 @@ https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_21-flo
 
 ## 4. 三种加载方式
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_22-arch-skills-backends.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_22-arch-skills-backends.png)
 
 <p>图 4：Skills 的三种存储后端</p>
 
@@ -211,7 +211,7 @@ def create_agent_for_user(role: str):
 
 ## 5. Skills 与子 Agent
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_24-arch-skills-subagent.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_24-arch-skills-subagent.png)
 
 <p>图 5：子 Agent 的 Skills 继承规则</p>
 
@@ -239,7 +239,7 @@ agent = create_deep_agent(
 
 生产环境的 Skill 权限有三个维度：**可见性**（能否发现与读取）、**写入权限**（能否修改文件）、**审批流程**（写入是否需要人确认）。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_23-arch-skills-permissions.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_23-arch-skills-permissions.png)
 
 <p>图 6：Skill 权限控制（共享与个人分层）</p>
 
@@ -309,7 +309,7 @@ agent = create_deep_agent(
 
 ## 7. 用 Skills 执行代码
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_25-arch-skills-code-execution.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_25-arch-skills-code-execution.png)
 
 <p>图 7：两种代码执行模式</p>
 

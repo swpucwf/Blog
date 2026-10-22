@@ -19,7 +19,7 @@
 | 状态性 | 无状态，每次调用相互独立 | 有状态，子 Agent 拥有自己的会话（thread），历史持续累积 |
 | 典型场景 | 毫秒到秒级的快速委派 | 分钟以上的研究、编码、迁移等长程任务 |
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_15-comparison-sync-vs-async.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_15-comparison-sync-vs-async.png)
 
 <p>图 1：同步与异步子 Agent 对比</p>
 
@@ -112,11 +112,11 @@ agent = create_deep_agent(
 主 Agent → cancel_async_task("abc-123") → cancelled
 ```
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_16-flowchart-async-lifecycle.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_16-flowchart-async-lifecycle.png)
 
 <p>图 2：异步任务生命周期</p>
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_17-sequence-async-protocol.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_17-sequence-async-protocol.png)
 
 <p>图 3：用户、主 Agent 与 Agent Protocol 服务的时序</p>
 

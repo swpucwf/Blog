@@ -81,7 +81,7 @@ agent = create_deep_agent(
 
 流程：**Agent 运行到敏感工具 → 暂停并返回中断信息 → 用户检查并决策 → 用相同 `thread_id` 恢复。**
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_17-flowchart-hitl-flow.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_17-flowchart-hitl-flow.png)
 
 <p>图 1：HITL 执行流程</p>
 
@@ -201,7 +201,7 @@ agent = create_deep_agent(
 
 ## 8. 按风险分层
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_18-infographic-risk-levels.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_18-infographic-risk-levels.png)
 
 <p>图 2：按风险等级分层配置</p>
 
@@ -290,7 +290,7 @@ class DraftApprovalMiddleware(AgentMiddleware):
         return {"messages": [AIMessage(content=f"草稿未发布：{decision.get('reason')}")]}
 ```
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_29-flowchart-interrupt-state-resume.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_29-flowchart-interrupt-state-resume.png)
 
 <p>图 3：interrupt 的保存与恢复</p>
 

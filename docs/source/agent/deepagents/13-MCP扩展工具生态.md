@@ -22,7 +22,7 @@
   -> Deep Agent 继续推理并回答
 ```
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_36-framework-mcp-integration-layers.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_36-framework-mcp-integration-layers.png)
 
 <p>图 1：MCP 接入的分层架构</p>
 
@@ -131,7 +131,7 @@ required: ['a', 'b']
 
 这个检查点没用模型，却验证了六件事：依赖可导入、Client 能启动 stdio 子进程、MCP 初始化与工具发现成功、名称/描述/Schema 转换完成、LangChain Tool 能真实调用、Server 返回值能转成内容块。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_37-flowchart-mcp-validation-path.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_37-flowchart-mcp-validation-path.png)
 
 <p>图 2：分层验证路径</p>
 
@@ -247,7 +247,7 @@ async with client.session("course_math") as session:
 
 Agent 的所有运行都必须在 `async with` 内完成；退出后 Session 关闭，基于它的工具不能继续执行。三个细节：`MultiServerMCPClient` 本身不是异步上下文管理器；直接 `load_mcp_tools(session)` 不继承回调、Interceptor、前缀与错误策略，需显式传；已打开的持久 Session 不会因 Interceptor 改 Header 而重新认证。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_38-comparison-mcp-session-lifecycle.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_38-comparison-mcp-session-lifecycle.png)
 
 <p>图 3：Session 生命周期对比</p>
 
@@ -329,7 +329,7 @@ agent = create_deep_agent(
 
 **stdio 是本地代码执行配置**：`command`、`args`、`env` 会用当前应用用户权限执行，SDK 不会弹「是否信任」确认框。上线前：只运行审核过的包与命令、固定依赖版本与来源、用绝对路径、最小化环境变量、Server 内再次校验路径/租户/资源、Web 场景优先隔离的远程 MCP 服务。远程 HTTP 同样不是天然安全：用 TLS、限制可连主机、防止访问 localhost 或云元数据地址、审计 Header 中的秘密。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_39-framework-mcp-security-boundaries.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_39-framework-mcp-security-boundaries.png)
 
 <p>图 4：MCP 工具的安全控制边界</p>
 

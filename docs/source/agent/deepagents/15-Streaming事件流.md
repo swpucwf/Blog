@@ -18,7 +18,7 @@ print(result["messages"][-1].content)
 - 工具参数还在生成，还是工具已经返回错误？
 - 最终答案出现前，到底发生了哪些步骤？
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_44-comparison-invoke-vs-streaming.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_44-comparison-invoke-vs-streaming.png)
 
 <p>图 1：invoke 与 Streaming 的体验对比</p>
 
@@ -121,7 +121,7 @@ def belongs_to_subagent(namespace, path) -> bool:
 
 父级 `stream` 提供同方向的 projection：`messages`（coordinator 消息）、`tool_calls`、`values`、`subagents`、`output`。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_45-framework-typed-projections.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_45-framework-typed-projections.png)
 
 <p>图 2：Typed Projection 的层级与作用域</p>
 
@@ -263,7 +263,7 @@ for name, item in stream.interleave("messages", "subagents"):
 
 它适合快速做同步展示，但读取完整文本或进入内层循环仍可能阻塞外层，也不能保证整棵树的 token/嵌套顺序；实时异步应用应并发消费，精确协议排序用 raw `seq`。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_46-sequence-concurrent-streaming.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_46-sequence-concurrent-streaming.png)
 
 <p>图 3：并发消费与顺序边界</p>
 
@@ -347,7 +347,7 @@ for chunk in agent.stream(request, stream_mode="updates", subgraphs=True, versio
 
 嵌套时可能多个 `tools:` 段，应保留完整 `ns` 或按已知 `subagent.path` 前缀匹配，不能只取第一个 ID 当全局唯一键。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_47-comparison-v3-v2-streaming.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_47-comparison-v3-v2-streaming.png)
 
 <p>图 4：v3 与 v2 的观察层级</p>
 

@@ -22,9 +22,6 @@
 - [14-评分量规](/source/agent/deepagents/14-评分量规)
 - [15-Streaming事件流](/source/agent/deepagents/15-Streaming事件流)
 - [16-Interpreters代码编排](/source/agent/deepagents/16-Interpreters代码编排)
-
-<!-- 按课程顺序撰写后登记：
 - [17-动态子Agent](/source/agent/deepagents/17-动态子Agent)
 - [18-决策模型Harness](/source/agent/deepagents/18-决策模型Harness)
 - [19-附录：v0.7更新与迁移](/source/agent/deepagents/19-附录-v0.7更新与迁移)
--->

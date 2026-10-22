@@ -27,7 +27,7 @@
 
 **Interpreter 不是轻量 Shell，也不是本地沙箱**，而是 Agent 循环里的内存代码运行时。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_48-comparison-tool-calling-vs-interpreter.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_48-comparison-tool-calling-vs-interpreter.png)
 
 <p>图 1：普通工具调用与 Interpreter + PTC</p>
 
@@ -83,7 +83,7 @@ const risky = orders
 
 ### 2.2 Interpreter 与 Sandbox 的分工
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_49-framework-interpreter-sandbox-boundaries.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_49-framework-interpreter-sandbox-boundaries.png)
 
 <p>图 2：Interpreter 与 Sandbox 的边界</p>
 
@@ -186,7 +186,7 @@ const risky = rows
 | `turn` | 当前 turn 内的多次 eval | 一次请求分步计算 | 下一轮不能复用结果 |
 | `call` | 只保留当前一次 eval | 无状态转换、隔离最强 | 多次 eval 要重新准备数据 |
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_50-timeline-interpreter-state-modes.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_50-timeline-interpreter-state-modes.png)
 
 <p>图 3：call、turn、thread 三种状态范围</p>
 
@@ -263,7 +263,7 @@ QuickJS 默认没有文件、网络与 Shell；一旦把工具接入 PTC，**工
 
 面对不可信或半可信代码，把整个 Agent 放进隔离 Worker 或容器，并继续收紧 PTC 白名单。需要 Shell、装包或系统级测试用 Sandbox；需要人工确认高风险动作保留 HITL；文件访问范围继续由权限规则控制。这些机制负责不同边界，不能互相替代。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_51-framework-ptc-safety-guardrails.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_51-framework-ptc-safety-guardrails.png)
 
 <p>图 4：PTC 的四层防护</p>
 

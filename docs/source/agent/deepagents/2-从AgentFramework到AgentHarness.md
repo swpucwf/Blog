@@ -53,7 +53,7 @@ Harness 是「开箱即用」的 Agent 套件，在 Runtime 与 Framework 基础
 
 Deep Agents 利用 LangChain 的核心构建块，运行在 LangGraph 之上，提供：虚拟文件系统（`read_file`/`write_file`/`edit_file`/`delete`/`ls`/`glob`/`grep`）、任务规划（按需启用 `TodoListMiddleware` 获得 `write_todos`）、子 Agent 委派（`task`）、Skills、上下文管理（摘要、大结果卸载）、记忆。同层还有 Claude Agent SDK、Manus。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_01-framework-three-layer-architecture.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_01-framework-three-layer-architecture.png)
 
 <p>图 1：Agent 开发三层架构（LangSmith 贯穿提供可观测性）</p>
 
@@ -119,7 +119,7 @@ User: 请帮我重构 src/ 下的代码。
 
 > **Context Engineering 不是把所有信息喂给 LLM，而是为 LLM 构建一套高效获取和管理信息的基础设施。**
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_02-comparison-context-engineering.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_02-comparison-context-engineering.png)
 
 <p>图 2：Prompt Stuffing 与虚拟文件系统的对比</p>
 
@@ -140,7 +140,7 @@ https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_02-com
 **Claude Agent SDK 独有**：与 Claude 深度集成、Hooks 系统、自定义 HTTP/WebSocket 层与容器化部署。
 **Codex SDK 独有**：OS 级沙箱模式（`read-only`/`workspace-write`/`danger-full-access`）、内置 MCP Server 模式。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_03-comparison-harness-competitors.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_03-comparison-harness-competitors.png)
 
 <p>图 3：三大 Agent Harness 对比</p>
 
@@ -150,7 +150,7 @@ https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_03-com
 
 核心关系：**Deep Agents 在 LangChain 的 Agent 循环周围装配 Middleware，最终由 LangGraph 执行。** Middleware 可以提供工具、扩展状态，也可以在模型调用与工具执行等环节介入；它们的 hooks 运行在编译后的执行图中。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_04-framework-deepagents-architecture.svg
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_04-framework-deepagents-architecture.svg)
 
 <p>图 4：Deep Agents 整体架构</p>
 

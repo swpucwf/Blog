@@ -17,7 +17,7 @@
 
 打个比方：主 Agent 是项目经理，子 Agent 是专项负责人。项目经理不需要参加每一场技术讨论，只看负责人提交的总结报告。
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_13-comparison-context-quarantine.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_13-comparison-context-quarantine.png)
 
 <p>图 1：有无子 Agent 的上下文对比</p>
 
@@ -214,7 +214,7 @@ agent = create_deep_agent(
 )
 ```
 
-https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_14-framework-multi-subagent.png
+![配图](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/deepagents_14-framework-multi-subagent.png)
 
 <p>图 2：多子 Agent 协作模式</p>
 
