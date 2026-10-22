@@ -82,6 +82,17 @@
       max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
     }
     .series-pager .pager-empty { visibility: hidden; }
+
+    /* 封面页：初始隐藏左侧目录与切换按钮，下滑进入正文后再滑入（由 coverAwareSidebar 插件切换 body.cover-page） */
+    .sidebar, .sidebar-toggle {
+      transition: transform .35s ease, opacity .35s ease, visibility .35s ease;
+    }
+    body.cover-page .sidebar {
+      opacity: 0; visibility: hidden; transform: translateX(-100%);
+    }
+    body.cover-page .sidebar-toggle {
+      opacity: 0; visibility: hidden;
+    }
   </style>
 </head>
 <body>
@@ -176,6 +187,28 @@
               content.appendChild(box);
             });
           });
+        },
+        // 封面页侧边栏联动：docsify 封面 section.cover 为 relative、z-index 低于 .sidebar(absolute)，
+        // 桌面宽度下目录会盖在封面上方；且封面的 show class 不随滚动移除，故按滚动位置判断：
+        // 封面仍占据大半屏时给 body 加 cover-page 类隐藏目录，下滑进入正文后再显示。
+        function coverAwareSidebar(hook) {
+          function update() {
+            var cover = document.querySelector('.cover.show');
+            var onCover = false;
+            if (cover) {
+              var rect = cover.getBoundingClientRect();
+              var h = window.innerHeight || document.documentElement.clientHeight || 0;
+              onCover = rect.bottom > h * 0.5;
+            }
+            document.body.classList.toggle('cover-page', onCover);
+          }
+          hook.doneEach(function () { window.setTimeout(update, 0); });
+          if (!window.__coverSidebarBound) {
+            window.__coverSidebarBound = true;
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update, { passive: true });
+          }
+          update();
         }
       ]
     }
