@@ -6,8 +6,9 @@
 
 ## 目录
 
-<!-- 按课程顺序撰写后登记：
 - [1-准备：环境与开发技能](/source/agent/deepagents/1-准备-环境与开发技能)
+
+<!-- 按课程顺序撰写后登记：
 - [2-从AgentFramework到AgentHarness](/source/agent/deepagents/2-从AgentFramework到AgentHarness)
 - [3-快速上手](/source/agent/deepagents/3-快速上手)
 - [4-虚拟文件系统](/source/agent/deepagents/4-虚拟文件系统)
