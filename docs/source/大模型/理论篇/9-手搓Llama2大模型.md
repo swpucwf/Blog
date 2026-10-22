@@ -9,7 +9,7 @@
 Llama2 遵循 GPT 开创的 **Decoder-Only** 架构，完全由 Transformer 解码器层堆叠，天然适合自回归生成。它的数据流：输入嵌入 → N×Transformer Block → 最终归一化 + 线性输出得 logits。与原始 Transformer 解码器相比，Llama2 及同类模型做了四项组件升级：
 
 <div align="center">
-  <img src="{{IMG:6_1_1.svg}}" width="40%" alt="Llama2 架构图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_1_1.svg" width="40%" alt="Llama2 架构图" />
   <p>图 1：Llama2 架构示意</p>
 </div>
 
@@ -46,7 +46,7 @@ class RMSNorm(nn.Module):
 传统位置编码（固定或可学习）都是**绝对位置编码**——给每个位置分配独立向量、用**加法**注入词嵌入。Llama2 用 **RoPE**，是**相对位置编码**，策略根本不同：**位置信息不再是「加」到词嵌入，而是在算注意力时通过复数「乘法」「旋转」Q 和 K 向量**。
 
 <div align="center">
-  <img src="{{IMG:6_1_2.png}}" width="80%" alt="RoPE 旋转位置编码示意图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_1_2.png" width="80%" alt="RoPE 旋转位置编码示意图" />
   <p>图 2：RoPE 工作原理</p>
 </div>
 

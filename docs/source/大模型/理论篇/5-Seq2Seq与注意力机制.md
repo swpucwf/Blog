@@ -15,7 +15,7 @@ Seq2Seq 借鉴自编码器但做了关键**泛化**：自编码器的编码器�
 Seq2Seq 的核心思想模拟人类翻译：先完整读完并理解源句、形成综合语义表示，再基于它逐词生成译文。
 
 <div align="center">
-  <img src="{{IMG:4_1_1.svg}}" width="80%" alt="Seq2Seq详细工作流程" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_4_1_1.svg" width="80%" alt="Seq2Seq详细工作流程" />
   <p>图 1：基于 LSTM 的 Seq2Seq 工作流程</p>
 </div>
 
@@ -117,7 +117,7 @@ $\alpha_{tj}$ 即解码第 $t$ 词时分配给输入第 $j$ 词的**注意力权
 随后把 $C_t$ 与当前输入词元 $y_{t-1}$ 的词嵌入**拼接**成信息更丰富的向量，连同 $h'_{t-1}$ 送入解码 RNN 得 $h'_t$ 并预测 $y_t$。
 
 <div align="center">
-  <img src="{{IMG:4_2_1.svg}}" width="90%" alt="Attention 工作流程" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_4_2_1.svg" width="90%" alt="Attention 工作流程" />
   <p>图 2：Attention 工作流程</p>
 </div>
 

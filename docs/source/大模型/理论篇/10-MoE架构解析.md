@@ -43,7 +43,7 @@ Google Brain（Hinton、Jeff Dean 等）的《Outrageously Large Neural Networks
 **条件计算**回答两难困境：参数越多准确率越高，但成本随之飙升——能否**不增计算量而大幅增加参数量**？答案是**稀疏门控 MoE 层**：每个样本处理时只激活网络一小部分。引入 1370 亿参数的 MoE 层（数千专家），在语言建模与机器翻译上显著超 SOTA，计算效率仅微损。架构上把 MoE 层嵌入堆叠 LSTM 之间，门控算稀疏权重、只激活少数专家，其余闲置，输出加权求和传给下一层——对每个 token 动态选不同专家组合。
 
 <div align="center">
-  <img src="{{IMG:6_2_1.png}}" width="70%" alt="LSTM + MoE 架构图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_1.png" width="70%" alt="LSTM + MoE 架构图" />
   <p>图 1：稀疏门控 MoE 层架构</p>
 </div>
 
@@ -52,7 +52,7 @@ Google Brain（Hinton、Jeff Dean 等）的《Outrageously Large Neural Networks
 - **如何稀疏选择——带噪声门控**：Softmax 门控给所有专家非零权重（都得算，省不了算力）。加可训练高斯噪声，只保留权重最大的 $k$ 个（如 $k=4$），其余强制置 $-\infty$（概率 0）。效果：计算预算基本不变时，专家数从 4 增到 4096，参数量剧增而困惑度显著下降——条件计算能在不加推理成本下用海量参数提升性能。
 
 <div align="center">
-  <img src="{{IMG:6_2_2.png}}" width="50%" alt="模型容量与效果对比图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_2.png" width="50%" alt="模型容量与效果对比图" />
   <p>图 2：模型容量与测试集困惑度关系</p>
 </div>
 
@@ -75,7 +75,7 @@ $E_i$ 内部就是标准双层全连接。GShard 提出 **Top-2 Gating**：发�
 **分布式并行**：单卡装不下 600B。非 MoE 层（Attention）**复制**到所有设备做数据并行；MoE 层**分片**（如 2048 专家分 2048 TPU 核）；token 要路由到不在本设备的专家时，用 **All-to-All** 通信发过去算完传回。
 
 <div align="center">
-  <img src="{{IMG:6_2_3.png}}" width="80%" alt="GShard MoE Transformer Encoder 架构图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_3.png" width="80%" alt="GShard MoE Transformer Encoder 架构图" />
   <p>图 3：GShard 架构与「复制+分片」并行策略</p>
 </div>
 
@@ -88,7 +88,7 @@ $E_i$ 内部就是标准双层全连接。GShard 提出 **Top-2 Gating**：发�
 **Switch Layer** 用稀疏 FFN 替换稠密 FFN，核心是 **Top-1 Routing**——每 token 只发给**唯一**一个专家（区别于传统 Top-k）。三大优势：路由决策更简单、每 token 只发一个目的地降通信、每专家处理的 token 数（Expert Capacity）至少减半。看似激进，实验证明不降质量还大幅提速。
 
 <div align="center">
-  <img src="{{IMG:6_2_4.png}}" width="80%" alt="Switch Transformer Encoder 架构图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_4.png" width="80%" alt="Switch Transformer Encoder 架构图" />
   <p>图 4：Switch Transformer 架构</p>
 </div>
 
@@ -99,7 +99,7 @@ $$ \text{Capacity} = \frac{\text{TotalTokens}}{\text{NumExperts}} \times \text{C
 Capacity Factor 通常 >1.0，给专家额外缓冲槽位应对分配不均；超容量时触发 **Token Dropping**——多余 token 不经专家处理、直接走残差传到下一层（保证静态形状但可能损失信息，容量设置很关键）。
 
 <div align="center">
-  <img src="{{IMG:6_2_5.png}}" width="90%" alt="Token Routing Dynamics" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_5.png" width="90%" alt="Token Routing Dynamics" />
   <p>图 5：Token 路由动态与专家容量</p>
 </div>
 
@@ -116,12 +116,12 @@ $f_i$ 是**实际**分给专家 $i$ 的比例、$P_i$ 是**预期**路由给它�
 2021 年 GLaM 用与 GPT-3 相同的 **Decoder-only** 架构（适合 Few/Zero-shot），把参数推到 **1.2 万亿**（GPT-3 的 7 倍），却因稀疏 MoE 有更高训推效率。隔层替换 FFN 为 MoE 层，每 MoE 层 64 专家取 **Top-2**；总参数 1.2T 但每 token 仅激活 **96.6B（约 8%）**，推理 FLOPs 约为 GPT-3 的一半。团队还发现**高质量数据**很关键——用质量分类器严格过滤网页数据训练的模型优于未过滤海量数据。
 
 <div align="center">
-  <img src="{{IMG:6_2_6.png}}" width="40%" alt="GLaM 模型架构图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_6.png" width="40%" alt="GLaM 模型架构图" />
   <p>图 6：GLaM 架构</p>
 </div>
 
 <div align="center">
-  <img src="{{IMG:6_2_7.png}}" width="100%" alt="GLaM 与 GPT-3 性能与成本对比" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_7.png" width="100%" alt="GLaM 与 GPT-3 性能与成本对比" />
   <p>图 7：GLaM 与 GPT-3 性能与成本对比</p>
 </div>
 
@@ -149,21 +149,21 @@ GLaM 用数据证明稀疏模型的「更大更强更环保」：
 - **路由机制**：每层 8 专家、标准 **Top-2**——每 token 分给 8 个中 2 个，两个专家输出加权求和作层输出；
 
 <div align="center">
-  <img src="{{IMG:6_2_8.png}}" width="90%" alt="Mixture of Experts Layer" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_8.png" width="90%" alt="Mixture of Experts Layer" />
   <p>图 8：Mistral 8x7B 的 Top-2 路由</p>
 </div>
 
 - **性能**：GSM8K、MMLU、HumanEval 等基准上以 13B 活跃参数超越稠密的 Llama 2 70B 与 GPT-3.5，数学/代码尤著；支持 **32k** 上下文，Passkey Retrieval 达 100% 召回；
 
 <div align="center">
-  <img src="{{IMG:6_2_9.png}}" width="90%" alt="Mistral 8x7B 性能对比" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_9.png" width="90%" alt="Mistral 8x7B 性能对比" />
   <p>图 9：Mistral 8x7B 与 Llama 2 各基准对比</p>
 </div>
 
 - **路由分析（反直觉发现）**：专家**没有按「学科领域」（生物/数学/哲学）分工**。统计不同领域数据（arXiv/PubMed/Wikipedia）在各层的专家分配比例，同一专家在不同数据集上颜色深浅极接近——**无论输入哪个领域，Router 选各专家的概率分布几乎一样**。专家更多按**语法**和 **Token 结构**（缩进、介词）分工，而非人类定义的知识领域。
 
 <div align="center">
-  <img src="{{IMG:6_2_10.png}}" width="90%" alt="Mistral 8x7B 路由专家分布" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_10.png" width="90%" alt="Mistral 8x7B 路由专家分布" />
   <p>图 10：各领域数据的专家路由分布，显示无领域偏差</p>
 </div>
 
@@ -179,14 +179,14 @@ $$ \mathbf{y} = \underbrace{\sum_{i \in \mathcal{S}} \mathbf{E}_i(\mathbf{x})}_{
 $\mathcal{S}$ 共享专家集合（总激活）、$\mathcal{R}$ 路由专家集合（选择性激活）——双路径是它区别于传统 MoE（前面 $\mathbf{y}=\sum p_i E_i$）的关键。
 
 <div align="center">
-  <img src="{{IMG:6_2_11.png}}" width="80%" alt="DeepSeekMoE 架构图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_11.png" width="80%" alt="DeepSeekMoE 架构图" />
   <p>图 11：DeepSeekMoE 演进（传统 Top-2→细粒度→细粒度+共享专家）</p>
 </div>
 
 DeepSeek-R1 更靠**大规模强化学习**具备强推理：AIME 2024 Pass@1 达 79.8%（略高 OpenAI-o1-1217），MATH-500 达 97.3%（与 o1 持平），Codeforces Elo 2029（超 96.3% 人类参赛者）。
 
 <div align="center">
-  <img src="{{IMG:6_2_12.png}}" width="80%" alt="DeepSeek-R1 性能对比" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_12.png" width="80%" alt="DeepSeek-R1 性能对比" />
   <p>图 12：DeepSeek-R1 在数学/代码/知识基准的表现</p>
 </div>
 
@@ -195,7 +195,7 @@ DeepSeek-R1 更靠**大规模强化学习**具备强推理：AIME 2024 Pass@1 �
 只需两处改动、不到 50 行：`ffn.py` 加含门控与多专家的 `MoE` 类，`transformer.py` 用它替换 `FeedForward`；Attention、RoPE、Norm 全不动。MoE 层在 Transformer Block 的 FFN 位置引入 Router 与 Experts，输入经 RMSNorm 后进 MoE——Router 算权重选 Top-k，选中专家并行处理再加权求和。
 
 <div align="center">
-  <img src="{{IMG:6_2_13.svg}}" width="40%" alt="Llama2 + MoE 架构图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_6_2_13.svg" width="40%" alt="Llama2 + MoE 架构图" />
   <p>图 13：Llama2 + MoE 架构</p>
 </div>
 

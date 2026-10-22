@@ -9,7 +9,7 @@ Transformer 催生的预训练模型往往只取架构的一部分：**GPT 采�
 Word2Vec 给每个词一个固定向量，解决不了一词多义——「破防」在「我出了一件**破防**装备」和「NLP 算法给我学**破防**了」中含义完全不同，向量却相同。BERT 的设计初衷正是生成**动态的、与上下文相关的词向量**；它不只是词向量工具，更是**预训练语言模型**，工作范式分两阶段：
 
 <div align="center">
-  <img src="{{IMG:5_1_1.png}}" alt="BERT 的预训练与微调流程" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_5_1_1.png" alt="BERT 的预训练与微调流程" />
   <p>图 1：BERT 的预训练与微调流程</p>
 </div>
 
@@ -38,7 +38,7 @@ Word2Vec 给每个词一个固定向量，解决不了一词多义——「破�
 $$ Input_{embedding} = Token_{embedding} + Position_{embedding} + Segment_{embedding} $$
 
 <div align="center">
-  <img src="{{IMG:5_1_2.svg}}" alt="BERT 输入表示" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_5_1_2.svg" alt="BERT 输入表示" />
   <p>图 2：BERT 输入表示</p>
 </div>
 
@@ -59,7 +59,7 @@ $$ Input_{embedding} = Token_{embedding} + Position_{embedding} + Segment_{embed
 ## 4. 两个预训练任务
 
 <div align="center">
-  <img src="{{IMG:5_1_3.svg}}" alt="BERT 预训练任务图示" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_5_1_3.svg" alt="BERT 预训练任务图示" />
   <p>图 3：BERT 预训练任务 MLM 与 NSP</p>
 </div>
 
@@ -180,7 +180,7 @@ $$ P(x_1,...,x_T) = \prod_{t=1}^{T} P(x_t | x_1,...,x_{t-1}) $$
 GPT 本质是 Transformer 解码器模块的堆叠，标准层含两个关键子层：**掩码多头自注意力**（单向自回归的关键——掩码确保任一位置只能关注左侧）与**位置前馈网络**（与编码器完全相同）。原始 Transformer 解码器中连接编码器的**交叉注意力层被移除**——GPT 根本没有编码器。
 
 <div align="center">
-  <img src="{{IMG:5_2_1.png}}" width="90%" alt="GPT-1 模型架构与输入变换" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_5_2_1.png" width="90%" alt="GPT-1 模型架构与输入变换" />
   <p>图 4：GPT-1 架构（左）与针对不同任务的输入变换（右）</p>
 </div>
 

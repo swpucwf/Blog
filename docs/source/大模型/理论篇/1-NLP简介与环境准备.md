@@ -23,7 +23,7 @@ NLP 的技术体系可以看作层层递进的金字塔，处理过程由浅入�
 ## 2. 发展历程：从规则到智能
 
 <p align="center">
-  <img src="{{IMG:1_1_1.gif}}" width="80%" alt="NLP的发展历程" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_1_1_1.gif" width="80%" alt="NLP的发展历程" />
   <br />
   <em>图 1：NLP 的发展历程</em>
 </p>
@@ -82,32 +82,32 @@ bash ~/miniconda.sh
 Windows 图形化安装的两个要点：安装路径务必全英文无空格（不建议默认 C 盘）；勾选 `Register Anaconda3 as default Python`，并在系统环境变量 `Path` 中补上 `<安装目录>`、`<安装目录>\Scripts`、`<安装目录>\Library\bin` 三条路径，最后 `conda --version` 验证。
 
 <div align="center">
-  <img src="{{IMG:1_2_1.png}}" width="80%" alt="Anaconda 官网下载页" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_1_2_1.png" width="80%" alt="Anaconda 官网下载页" />
   <p>图 2：Anaconda 官网下载页</p>
 </div>
 
 <div align="center">
-  <img src="{{IMG:1_2_2.png}}" width="80%" alt="Anaconda 安装向导" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_1_2_2.png" width="80%" alt="Anaconda 安装向导" />
   <p>图 3：Anaconda 安装向导</p>
 </div>
 
 <div align="center">
-  <img src="{{IMG:1_2_3.png}}" width="80%" alt="Anaconda 高级安装选项" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_1_2_3.png" width="80%" alt="Anaconda 高级安装选项" />
   <p>图 4：Anaconda 高级安装选项</p>
 </div>
 
 <div align="center">
-  <img src="{{IMG:1_2_4.png}}" width="80%" alt="Windows 系统环境变量配置" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_1_2_4.png" width="80%" alt="Windows 系统环境变量配置" />
   <p>图 5：Windows 系统环境变量配置</p>
 </div>
 
 <div align="center">
-  <img src="{{IMG:1_2_5.png}}" width="80%" alt="编辑环境变量" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_1_2_5.png" width="80%" alt="编辑环境变量" />
   <p>图 6：编辑环境变量</p>
 </div>
 
 <div align="center">
-  <img src="{{IMG:1_2_6.png}}" width="80%" alt="添加 Path 路径" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_1_2_6.png" width="80%" alt="添加 Path 路径" />
   <p>图 7：添加 Path 路径</p>
 </div>
 

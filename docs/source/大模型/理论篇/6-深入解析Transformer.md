@@ -94,7 +94,7 @@ output = self.wo(context)                               # W^O 融合各头信息
 ## 4. Transformer 整体结构
 
 <div align="center">
-    <img src="{{IMG:4_3_1.svg}}" width="40%" alt="Transformer 架构" />
+    <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_4_3_1.svg" width="40%" alt="Transformer 架构" />
     <p>图 1：Transformer 架构</p>
 </div>
 

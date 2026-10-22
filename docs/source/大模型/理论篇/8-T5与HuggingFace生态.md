@@ -5,7 +5,7 @@
 BERT 基于 Encoder 擅长理解，GPT 基于 Decoder 擅长生成，那么 Transformer 最原始的 **Encoder-Decoder** 结构去哪了？Google 的 **T5（Text-to-Text Transfer Transformer）** 回归了这一经典架构——它不去调和「理解 vs 生成」，而是在**输入输出形式**上找通解：**把所有 NLP 任务都视为「文本到文本」的转换**。
 
 <div align="center">
-  <img src="{{IMG:5_3_1.png}}" width="90%" alt="Text-to-Text 框架示意图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_5_3_1.png" width="90%" alt="Text-to-Text 框架示意图" />
   <p>图 1：Text-to-Text 框架</p>
 </div>
 
@@ -31,7 +31,7 @@ BERT 模式下不同任务要设计不同结构：分类加全连接头、序列
 不同于 BERT 的单字掩码或 GPT 的单向预测，T5 设计了**片段破坏与重构（Span Corruption）**：**破坏**——随机选若干**连续片段（Span）**替换为哨兵符 `<extra_id_0>`、`<extra_id_1>`；**重构**——要求 Decoder 生成被遮盖的片段。
 
 <div align="center">
-  <img src="{{IMG:5_3_2.png}}" width="90%" alt="Span Corruption 预训练目标示意图" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_5_3_2.png" width="90%" alt="Span Corruption 预训练目标示意图" />
   <p>图 2：Span Corruption 预训练目标</p>
 </div>
 
@@ -102,7 +102,7 @@ BERT/GPT/T5 的实战都离不开 **Transformers** 库。Hugging Face 已从一�
 **协作平台层**——**HF Hub 是 AI 领域的 GitHub**（支持 Git 版本控制）：**Models** 托管数十万预训练模型（NLP/CV/Audio 多模态，可下载可在线体验）；**Datasets** 托管公开数据集（预览 + 高效流式传输）；**Spaces** 用 Gradio/Streamlit/Docker 快速搭建 Web 演示。
 
 <div align="center">
-  <img src="{{IMG:5_4_1.png}}" width="90%" alt="Hugging Face 官网" />
+  <img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/basellm_5_4_1.png" width="90%" alt="Hugging Face 官网" />
   <p>图 3：Hugging Face 官网</p>
 </div>
 
