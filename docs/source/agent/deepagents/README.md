@@ -16,10 +16,10 @@
 - [8-Skills能力包](/source/agent/deepagents/8-Skills能力包)
 - [9-长期记忆](/source/agent/deepagents/9-长期记忆)
 - [10-Human-in-the-Loop](/source/agent/deepagents/10-Human-in-the-Loop)
-
-<!-- 按课程顺序撰写后登记：
 - [11-沙箱执行](/source/agent/deepagents/11-沙箱执行)
 - [12-文件系统权限](/source/agent/deepagents/12-文件系统权限)
+
+<!-- 按课程顺序撰写后登记：
 - [13-MCP扩展工具生态](/source/agent/deepagents/13-MCP扩展工具生态)
 - [14-评分量规](/source/agent/deepagents/14-评分量规)
 - [15-Streaming事件流](/source/agent/deepagents/15-Streaming事件流)
