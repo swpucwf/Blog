@@ -6,15 +6,12 @@
 
 ## 目录
 
-<!-- 按来源章节顺序撰写后登记，格式示例：
-- [1-从这里开始](/source/vibecoding/vibe-basic/1-从这里开始)
-- [2-从Coder到Commander](/source/vibecoding/vibe-basic/2-从Coder到Commander)
-- [3-心法：四个思维模型](/source/vibecoding/vibe-basic/3-心法-四个思维模型)
-- [4-技法：提示词与第一份PRD](/source/vibecoding/vibe-basic/4-技法-提示词与第一份PRD)
-- [5-实战：搭建第一个页面](/source/vibecoding/vibe-basic/5-实战-搭建第一个页面)
-- [6-实战：核心功能与数据存储](/source/vibecoding/vibe-basic/6-实战-核心功能与数据存储)
-- [7-进阶：版本控制部署与安全](/source/vibecoding/vibe-basic/7-进阶-版本控制部署与安全)
-- [8-上线：检查部署与反馈](/source/vibecoding/vibe-basic/8-上线-检查部署与反馈)
-- [9-尾声与下一步](/source/vibecoding/vibe-basic/9-尾声与下一步)
-- [10-附录](/source/vibecoding/vibe-basic/10-附录)
--->
+- [1-开始前：学习地图与求助流程](/source/vibecoding/vibe-basic/1-开始前-学习地图与求助流程)
+- [2-第一个版本：两小时做出个人主页与数字分身](/source/vibecoding/vibe-basic/2-第一个版本)
+- [3-带回自己的工作台：从平台到本地](/source/vibecoding/vibe-basic/3-带回自己的工作台)
+- [4-做好第一印象：界面风格与需求表达](/source/vibecoding/vibe-basic/4-做好第一印象)
+- [5-让主页更完整：内容引导与基础存档](/source/vibecoding/vibe-basic/5-让主页更完整)
+- [6-让数字分身更像你：人设回答与排错](/source/vibecoding/vibe-basic/6-让数字分身更像你)
+- [7-正式上线：部署分享与第一轮反馈](/source/vibecoding/vibe-basic/7-正式上线)
+- [8-尾声与下一步](/source/vibecoding/vibe-basic/8-尾声与下一步)
+- [9-附录：工具箱速查](/source/vibecoding/vibe-basic/9-附录)
