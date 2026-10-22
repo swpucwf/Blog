@@ -5,6 +5,13 @@
 - [agent](/source/agent/README)
   - [Agent 深入理解](/source/agent/深入理解/README)
   - [RAG 检索增强](/source/agent/RAG/README)
+- [大模型](/source/大模型/README)
+  - [NLP与Transformer理论](/source/大模型/理论篇/README)
+  - [文本任务实战](/source/大模型/实战篇/README)
+  - [微调与量化](/source/大模型/微调量化篇/README)
+  - [模型部署工程](/source/大模型/部署工程篇/README)
+  - [大模型安全](/source/大模型/安全篇/README)
+  - [多模态前沿](/source/大模型/多模态篇/README)
 - [论文阅读](/source/论文阅读/README)
 - vibecoding
   - [VibeCoding 基础篇](/source/vibecoding/README)
