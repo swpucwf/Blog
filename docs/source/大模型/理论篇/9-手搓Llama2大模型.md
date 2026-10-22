@@ -10,7 +10,7 @@ Llama2 遵循 GPT 开创的 **Decoder-Only** 架构，完全由 Transformer 解�
 
 <div align="center">
   <img src="{{IMG:6_1_1.svg}}" width="40%" alt="Llama2 架构图" />
-  <p>图 1：Llama2 架构示意（来源：base-llm 教程）</p>
+  <p>图 1：Llama2 架构示意</p>
 </div>
 
 - **预归一化（Pre-Norm）+ RMSNorm**：输入进入注意力层和前馈网络**之前**先过一次 `RMS Norm`——正如 GPT-2/3 转向 Pre-Norm 解决了深层训练难题，预归一化被视为提升大模型训练稳定性的关键；归一化统一用 RMSNorm；
@@ -47,7 +47,7 @@ class RMSNorm(nn.Module):
 
 <div align="center">
   <img src="{{IMG:6_1_2.png}}" width="80%" alt="RoPE 旋转位置编码示意图" />
-  <p>图 2：RoPE 工作原理（来源：base-llm 教程）</p>
+  <p>图 2：RoPE 工作原理</p>
 </div>
 
 **数学原理**：把向量每对维度 $(x_1,x_2)$ 视为复数 $x_1+ix_2 = re^{i\theta}$，两复数相乘模相乘、幅角相加。RoPE 的 `freqs_cis` 是模为 1 的复数 $e^{im\theta}$（$m$ 为位置），与 Q/K 相乘后只改变方向、不改变长度——位置越靠后旋转角度越大，把位置编码进向量的**方向**。

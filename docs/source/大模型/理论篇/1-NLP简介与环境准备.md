@@ -25,7 +25,7 @@ NLP 的技术体系可以看作层层递进的金字塔，处理过程由浅入�
 <p align="center">
   <img src="{{IMG:1_1_1.gif}}" width="80%" alt="NLP的发展历程" />
   <br />
-  <em>图 1：NLP 的发展历程（来源：base-llm 教程）</em>
+  <em>图 1：NLP 的发展历程</em>
 </p>
 
 NLP 的发展经历了从符号主义到连接主义、从依赖专家规则到拥抱海量数据的深刻变革：
@@ -81,6 +81,36 @@ bash ~/miniconda.sh
 
 Windows 图形化安装的两个要点：安装路径务必全英文无空格（不建议默认 C 盘）；勾选 `Register Anaconda3 as default Python`，并在系统环境变量 `Path` 中补上 `<安装目录>`、`<安装目录>\Scripts`、`<安装目录>\Library\bin` 三条路径，最后 `conda --version` 验证。
 
+<div align="center">
+  <img src="{{IMG:1_2_1.png}}" width="80%" alt="Anaconda 官网下载页" />
+  <p>图 2：Anaconda 官网下载页</p>
+</div>
+
+<div align="center">
+  <img src="{{IMG:1_2_2.png}}" width="80%" alt="Anaconda 安装向导" />
+  <p>图 3：Anaconda 安装向导</p>
+</div>
+
+<div align="center">
+  <img src="{{IMG:1_2_3.png}}" width="80%" alt="Anaconda 高级安装选项" />
+  <p>图 4：Anaconda 高级安装选项</p>
+</div>
+
+<div align="center">
+  <img src="{{IMG:1_2_4.png}}" width="80%" alt="Windows 系统环境变量配置" />
+  <p>图 5：Windows 系统环境变量配置</p>
+</div>
+
+<div align="center">
+  <img src="{{IMG:1_2_5.png}}" width="80%" alt="编辑环境变量" />
+  <p>图 6：编辑环境变量</p>
+</div>
+
+<div align="center">
+  <img src="{{IMG:1_2_6.png}}" width="80%" alt="添加 Path 路径" />
+  <p>图 7：添加 Path 路径</p>
+</div>
+
 （3）**配置国内镜像（可选但推荐）**：conda 官方源在国内可能较慢，可切清华镜像：
 
 ```bash
@@ -108,7 +138,7 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 
 有 GPU 则先用 `nvidia-smi` 查看右上角 `CUDA Version: 12.x` 确认支持的最高版本，再到 [PyTorch 官网](https://pytorch.org/get-started/locally/)选择与驱动匹配的指令安装。退出环境用 `conda deactivate`。
 
-> **补记**：安装截图类内容在此处从简——各步骤界面均为向导式普通操作，照文字要点走即可；源教程 `chapter1/images/` 下有 6 张对应截图可按需查阅。
+> **补记**：安装各步均为向导式普通操作，上方截图按「官网下载→安装向导→环境变量配置」的顺序展示，照文字要点走即可。
 
 ## 参考文献
 

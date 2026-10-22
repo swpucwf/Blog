@@ -95,7 +95,7 @@ output = self.wo(context)                               # W^O 融合各头信息
 
 <div align="center">
     <img src="{{IMG:4_3_1.svg}}" width="40%" alt="Transformer 架构" />
-    <p>图 1：Transformer 架构（来源：base-llm 教程）</p>
+    <p>图 1：Transformer 架构</p>
 </div>
 
 依然是 Encoder-Decoder 架构，但内部由标准化「积木」堆成：两侧各由 **N 个功能相同的层**堆叠（原论文 N=6）。

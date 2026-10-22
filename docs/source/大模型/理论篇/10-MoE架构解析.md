@@ -44,7 +44,7 @@ Google Brain（Hinton、Jeff Dean 等）的《Outrageously Large Neural Networks
 
 <div align="center">
   <img src="{{IMG:6_2_1.png}}" width="70%" alt="LSTM + MoE 架构图" />
-  <p>图 1：稀疏门控 MoE 层架构（来源：base-llm 教程）</p>
+  <p>图 1：稀疏门控 MoE 层架构</p>
 </div>
 
 落地须解决两挑战：
@@ -53,7 +53,7 @@ Google Brain（Hinton、Jeff Dean 等）的《Outrageously Large Neural Networks
 
 <div align="center">
   <img src="{{IMG:6_2_2.png}}" width="50%" alt="模型容量与效果对比图" />
-  <p>图 2：模型容量与测试集困惑度关系（来源：base-llm 教程）</p>
+  <p>图 2：模型容量与测试集困惑度关系</p>
 </div>
 
 - **如何防专家崩塌——负载均衡**：稀疏选择易引发**马太效应**——初期某些专家因随机初始化「运气好」被选中、得到梯度更新变「更聪明」、更常被选中；落选专家得不到训练持续「愚钝」最终「饿死」，模型退化成只有少数活跃专家的稠密模型。解法是在总损失加**辅助损失**（Importance Loss + Load Loss），不服务准确率、专罚「分配不均」，强制门控「雨露均沾」。
@@ -76,7 +76,7 @@ $E_i$ 内部就是标准双层全连接。GShard 提出 **Top-2 Gating**：发�
 
 <div align="center">
   <img src="{{IMG:6_2_3.png}}" width="80%" alt="GShard MoE Transformer Encoder 架构图" />
-  <p>图 3：GShard 架构与「复制+分片」并行策略（来源：base-llm 教程）</p>
+  <p>图 3：GShard 架构与「复制+分片」并行策略</p>
 </div>
 
 由此实现**亚线性**成本增长：参数量增 16 倍（37.5B→600B），训练算力成本仅增不到 4 倍。
@@ -89,7 +89,7 @@ $E_i$ 内部就是标准双层全连接。GShard 提出 **Top-2 Gating**：发�
 
 <div align="center">
   <img src="{{IMG:6_2_4.png}}" width="80%" alt="Switch Transformer Encoder 架构图" />
-  <p>图 4：Switch Transformer 架构（来源：base-llm 教程）</p>
+  <p>图 4：Switch Transformer 架构</p>
 </div>
 
 **专家容量与 Token Dropping**：硬件要静态 Tensor 形状，须预设每专家最大处理 token 数——
@@ -100,7 +100,7 @@ Capacity Factor 通常 >1.0，给专家额外缓冲槽位应对分配不均；�
 
 <div align="center">
   <img src="{{IMG:6_2_5.png}}" width="90%" alt="Token Routing Dynamics" />
-  <p>图 5：Token 路由动态与专家容量（来源：base-llm 教程）</p>
+  <p>图 5：Token 路由动态与专家容量</p>
 </div>
 
 辅助损失鼓励 token 均匀分布、减少丢弃：
@@ -117,12 +117,12 @@ $f_i$ 是**实际**分给专家 $i$ 的比例、$P_i$ 是**预期**路由给它�
 
 <div align="center">
   <img src="{{IMG:6_2_6.png}}" width="40%" alt="GLaM 模型架构图" />
-  <p>图 6：GLaM 架构（来源：base-llm 教程）</p>
+  <p>图 6：GLaM 架构</p>
 </div>
 
 <div align="center">
   <img src="{{IMG:6_2_7.png}}" width="100%" alt="GLaM 与 GPT-3 性能与成本对比" />
-  <p>图 7：GLaM 与 GPT-3 性能与成本对比（来源：base-llm 教程）</p>
+  <p>图 7：GLaM 与 GPT-3 性能与成本对比</p>
 </div>
 
 GLaM 用数据证明稀疏模型的「更大更强更环保」：
@@ -150,21 +150,21 @@ GLaM 用数据证明稀疏模型的「更大更强更环保」：
 
 <div align="center">
   <img src="{{IMG:6_2_8.png}}" width="90%" alt="Mixture of Experts Layer" />
-  <p>图 8：Mistral 8x7B 的 Top-2 路由（来源：base-llm 教程）</p>
+  <p>图 8：Mistral 8x7B 的 Top-2 路由</p>
 </div>
 
 - **性能**：GSM8K、MMLU、HumanEval 等基准上以 13B 活跃参数超越稠密的 Llama 2 70B 与 GPT-3.5，数学/代码尤著；支持 **32k** 上下文，Passkey Retrieval 达 100% 召回；
 
 <div align="center">
   <img src="{{IMG:6_2_9.png}}" width="90%" alt="Mistral 8x7B 性能对比" />
-  <p>图 9：Mistral 8x7B 与 Llama 2 各基准对比（来源：base-llm 教程）</p>
+  <p>图 9：Mistral 8x7B 与 Llama 2 各基准对比</p>
 </div>
 
 - **路由分析（反直觉发现）**：专家**没有按「学科领域」（生物/数学/哲学）分工**。统计不同领域数据（arXiv/PubMed/Wikipedia）在各层的专家分配比例，同一专家在不同数据集上颜色深浅极接近——**无论输入哪个领域，Router 选各专家的概率分布几乎一样**。专家更多按**语法**和 **Token 结构**（缩进、介词）分工，而非人类定义的知识领域。
 
 <div align="center">
   <img src="{{IMG:6_2_10.png}}" width="90%" alt="Mistral 8x7B 路由专家分布" />
-  <p>图 10：各领域数据的专家路由分布，显示无领域偏差（来源：base-llm 教程）</p>
+  <p>图 10：各领域数据的专家路由分布，显示无领域偏差</p>
 </div>
 
 ### 4.2 DeepSeekMoE 与 DeepSeek-R1
@@ -180,14 +180,14 @@ $\mathcal{S}$ 共享专家集合（总激活）、$\mathcal{R}$ 路由专家集�
 
 <div align="center">
   <img src="{{IMG:6_2_11.png}}" width="80%" alt="DeepSeekMoE 架构图" />
-  <p>图 11：DeepSeekMoE 演进（传统 Top-2→细粒度→细粒度+共享专家）（来源：base-llm 教程）</p>
+  <p>图 11：DeepSeekMoE 演进（传统 Top-2→细粒度→细粒度+共享专家）</p>
 </div>
 
 DeepSeek-R1 更靠**大规模强化学习**具备强推理：AIME 2024 Pass@1 达 79.8%（略高 OpenAI-o1-1217），MATH-500 达 97.3%（与 o1 持平），Codeforces Elo 2029（超 96.3% 人类参赛者）。
 
 <div align="center">
   <img src="{{IMG:6_2_12.png}}" width="80%" alt="DeepSeek-R1 性能对比" />
-  <p>图 12：DeepSeek-R1 在数学/代码/知识基准的表现（来源：base-llm 教程）</p>
+  <p>图 12：DeepSeek-R1 在数学/代码/知识基准的表现</p>
 </div>
 
 ## 5. MoE 代码实战：给 Llama2 换上 MoE 层
@@ -196,7 +196,7 @@ DeepSeek-R1 更靠**大规模强化学习**具备强推理：AIME 2024 Pass@1 �
 
 <div align="center">
   <img src="{{IMG:6_2_13.svg}}" width="40%" alt="Llama2 + MoE 架构图" />
-  <p>图 13：Llama2 + MoE 架构（来源：base-llm 教程）</p>
+  <p>图 13：Llama2 + MoE 架构</p>
 </div>
 
 ```python

@@ -6,7 +6,7 @@ BERT 基于 Encoder 擅长理解，GPT 基于 Decoder 擅长生成，那么 Tran
 
 <div align="center">
   <img src="{{IMG:5_3_1.png}}" width="90%" alt="Text-to-Text 框架示意图" />
-  <p>图 1：Text-to-Text 框架（来源：base-llm 教程）</p>
+  <p>图 1：Text-to-Text 框架</p>
 </div>
 
 ### 1.1 万物皆文本
@@ -32,7 +32,7 @@ BERT 模式下不同任务要设计不同结构：分类加全连接头、序列
 
 <div align="center">
   <img src="{{IMG:5_3_2.png}}" width="90%" alt="Span Corruption 预训练目标示意图" />
-  <p>图 2：Span Corruption 预训练目标（来源：base-llm 教程）</p>
+  <p>图 2：Span Corruption 预训练目标</p>
 </div>
 
 两个关键设计：
@@ -100,6 +100,11 @@ values = self.relative_attention_bias(relative_position_bucket)  # 查可学习 
 BERT/GPT/T5 的实战都离不开 **Transformers** 库。Hugging Face 已从一家 NLP 初创公司演变为覆盖「数据获取 → 模型开发 → 训练微调 → 评估部署」全生命周期的生态：
 
 **协作平台层**——**HF Hub 是 AI 领域的 GitHub**（支持 Git 版本控制）：**Models** 托管数十万预训练模型（NLP/CV/Audio 多模态，可下载可在线体验）；**Datasets** 托管公开数据集（预览 + 高效流式传输）；**Spaces** 用 Gradio/Streamlit/Docker 快速搭建 Web 演示。
+
+<div align="center">
+  <img src="{{IMG:5_4_1.png}}" width="90%" alt="Hugging Face 官网" />
+  <p>图 3：Hugging Face 官网</p>
+</div>
 
 **核心库层**——**Transformers**（生态引擎：统一 API 下载、加载、使用预训练模型）、**Tokenizers**（文本与模型的桥梁：底层 **Rust** 实现，Fast Tokenizers 速度极致）、**Datasets**（数据加速器：标准化加载接口 + 内存映射）。
 

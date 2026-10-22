@@ -16,7 +16,7 @@ Seq2Seq 的核心思想模拟人类翻译：先完整读完并理解源句、形
 
 <div align="center">
   <img src="{{IMG:4_1_1.svg}}" width="80%" alt="Seq2Seq详细工作流程" />
-  <p>图 1：基于 LSTM 的 Seq2Seq 工作流程（来源：base-llm 教程）</p>
+  <p>图 1：基于 LSTM 的 Seq2Seq 工作流程</p>
 </div>
 
 **编码器**负责「阅读和理解」：RNN/LSTM 逐词读入 $x_1...x_T$，每步按 $h_t = f(h_{t-1}, x_t)$（LSTM 为 $(h_t,c_t)=\text{LSTM}((h_{t-1},c_{t-1}),x_t)$）更新状态，读完后的最终状态即**上下文向量 $C$**（LSTM 通常 $C=(h_T,c_T)$；也可由全部 $\{h_1..h_T\}$ 拼接过线性层或平均池化得到）。编码器能看整个输入序列，所以可用**双向 RNN** 获得更丰富的表示。
@@ -118,7 +118,7 @@ $\alpha_{tj}$ 即解码第 $t$ 词时分配给输入第 $j$ 词的**注意力权
 
 <div align="center">
   <img src="{{IMG:4_2_1.svg}}" width="90%" alt="Attention 工作流程" />
-  <p>图 2：Attention 工作流程（来源：base-llm 教程）</p>
+  <p>图 2：Attention 工作流程</p>
 </div>
 
 高效打分函数是**缩放点积**——直接算查询向量与键向量的点积再除以 $\sqrt{d_k}$：

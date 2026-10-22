@@ -10,7 +10,7 @@ Word2Vec 给每个词一个固定向量，解决不了一词多义——「破�
 
 <div align="center">
   <img src="{{IMG:5_1_1.png}}" alt="BERT 的预训练与微调流程" />
-  <p>图 1：BERT 的预训练与微调流程（来源：base-llm 教程）</p>
+  <p>图 1：BERT 的预训练与微调流程</p>
 </div>
 
 1. **预训练**：在庞大通用语料（维基百科、书籍）上以特定无监督任务训练深度网络——目标不是完成某个具体任务，而是学习语言本身的规律（语法结构、语义关系、上下文依赖），得到参数训练好的**预训练模型**；
@@ -39,7 +39,7 @@ $$ Input_{embedding} = Token_{embedding} + Position_{embedding} + Segment_{embed
 
 <div align="center">
   <img src="{{IMG:5_1_2.svg}}" alt="BERT 输入表示" />
-  <p>图 2：BERT 输入表示（来源：base-llm 教程）</p>
+  <p>图 2：BERT 输入表示</p>
 </div>
 
 - **词元嵌入**：每个词元自身的向量。BERT 用 **WordPiece** 分词，把不常见词拆成更小子词单元（"studying" → "study" + "##ing"），有效处理未登录词。`bert-base-chinese` 的词表**以单字为主、含少量常用词**，处理中文时效果接近按字分词，但准确说法是**子词切分**。
@@ -60,7 +60,7 @@ $$ Input_{embedding} = Token_{embedding} + Position_{embedding} + Segment_{embed
 
 <div align="center">
   <img src="{{IMG:5_1_3.svg}}" alt="BERT 预训练任务图示" />
-  <p>图 3：BERT 预训练任务 MLM 与 NSP（来源：base-llm 教程）</p>
+  <p>图 3：BERT 预训练任务 MLM 与 NSP</p>
 </div>
 
 ### 4.1 MLM：完形填空
@@ -178,6 +178,11 @@ $$ P(x_1,...,x_T) = \prod_{t=1}^{T} P(x_t | x_1,...,x_{t-1}) $$
 ### 8.1 解码器堆叠：去掉交叉注意力
 
 GPT 本质是 Transformer 解码器模块的堆叠，标准层含两个关键子层：**掩码多头自注意力**（单向自回归的关键——掩码确保任一位置只能关注左侧）与**位置前馈网络**（与编码器完全相同）。原始 Transformer 解码器中连接编码器的**交叉注意力层被移除**——GPT 根本没有编码器。
+
+<div align="center">
+  <img src="{{IMG:5_2_1.png}}" width="90%" alt="GPT-1 模型架构与输入变换" />
+  <p>图 4：GPT-1 架构（左）与针对不同任务的输入变换（右）</p>
+</div>
 
 GPT-1 的架构与微调策略：左侧模型主体微调时除任务分类输出外，还保留语言模型预测作辅助目标——$L = L_{task} + \lambda L_{lm}$，多任务学习既助泛化又加速收敛；右侧是输入变换适配：分类任务加 `Start`/`Extract` 标记；蕴含任务用 `Delim` 拼接；**相似度任务**因 GPT 单向且对句序敏感，把两句话按两种顺序（Text1-Text2 与 Text2-Text1）分别输入、特征相加；多选题则将上下文与每个选项分别拼接独立计算得分。
 
