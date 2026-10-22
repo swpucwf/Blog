@@ -6,9 +6,7 @@
 
 ## 目录
 
-<!-- 按来源章节顺序撰写后登记，格式示例：
 - [1-FastAPI模型部署](/source/大模型/部署工程篇/1-FastAPI模型部署)
 - [2-云服务器部署与Docker Compose](/source/大模型/部署工程篇/2-云服务器部署与Docker)
 - [3-Git与GitHub版本控制基础](/source/大模型/部署工程篇/3-Git与GitHub版本控制基础)
 - [4-Jenkins CI/CD流水线](/source/大模型/部署工程篇/4-Jenkins-CICD流水线)
--->
