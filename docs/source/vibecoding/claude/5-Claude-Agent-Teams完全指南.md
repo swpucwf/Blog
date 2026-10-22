@@ -6,7 +6,7 @@
 
 想象一下，以前你使用 Claude Code，就像是一个项目经理带着一个超级能干的助手工作。无论任务多复杂，只有这一个助手在干活。现在有了 Agent Teams，你可以组建一支完整的 AI 开发团队——有的负责前端，有的负责后端，有的负责测试，它们可以**同时工作、互相交流、协同完成复杂任务**。
 
-![](assets/agent-teams-cover.svg)
+![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/agent-teams-cover.svg)
 
 ### 从单助手到团队协作
 

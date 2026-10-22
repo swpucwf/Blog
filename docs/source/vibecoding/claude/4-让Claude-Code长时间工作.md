@@ -12,7 +12,7 @@
 
 本章要解决的核心问题是：如何让 Claude Code 像真正的开发者一样，持续工作直到任务真正完成。
 
-![](assets/long-running-tasks-cover.svg)
+![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/long-running-tasks-cover.svg)
 
 ---
 
