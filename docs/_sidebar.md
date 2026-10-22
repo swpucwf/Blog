@@ -5,6 +5,7 @@
 - [agent](/source/agent/README)
   - [Agent 深入理解](/source/agent/深入理解/README)
   - [RAG 检索增强](/source/agent/RAG/README)
+  - [Deep Agents 实战](/source/agent/deepagents/README)
 - [大模型](/source/大模型/README)
   - [NLP与Transformer理论](/source/大模型/理论篇/README)
   - [文本任务实战](/source/大模型/实战篇/README)
