@@ -127,8 +127,36 @@
       alias: {
           '/.*/_sidebar.md': '/_sidebar.md'
       },
+      // 搜索白名单：仅索引下列已登记的页面；docs/resume.md 不在名单中，故不会进入搜索索引。
+      // 新增或调整专栏时，请同步 docs/_sidebar.md 与本列表。
       search: {
-          paths: 'auto',
+          paths: [
+              '/',
+              '/source/传统CV算法/README',
+              '/source/视频结构化/README',
+              '/source/GPU算子优化/README',
+              '/source/agent/README',
+              '/source/agent/深入理解/README',
+              '/source/agent/RAG技术全栈/README',
+              '/source/agent/RAG框架实战/README',
+              '/source/agent/deepagents/README',
+              '/source/大模型/README',
+              '/source/大模型/理论篇/README',
+              '/source/大模型/实战篇/README',
+              '/source/大模型/微调量化篇/README',
+              '/source/大模型/部署工程篇/README',
+              '/source/大模型/安全篇/README',
+              '/source/大模型/多模态篇/README',
+              '/source/大模型/多模态大模型实战/README',
+              '/source/论文阅读/README',
+              '/source/vibecoding/README',
+              '/source/vibecoding/claude/README',
+              '/source/vibecoding/规范驱动开发/README',
+              '/source/vibecoding/vibe-basic/README',
+              '/source/vibecoding/vibe-advanced/README',
+              '/source/vibecoding/vibe-practice/README',
+              '/source/产品经理/README',
+          ],
           placeholder: '搜索',
           noData: '找不到结果！',
           namespace: 'swpucwf-blog',
