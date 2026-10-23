@@ -27,6 +27,7 @@
 | 06 VibeCoding | AI 编程、Claude Code、规范驱动开发、Vibe Vibe 实践 | [VibeCoding 专栏](/source/vibecoding/README) |
 | 07 产品经理 | 需求判断、JTBD、Mom Test、双钻模型 | [进入](/source/产品经理/README) |
 | 08 AI 工具全景 | 模型 / 框架 / 工具选型、编程范式与角色商业 | [进入](/source/AI工具全景/README) |
+| 09 推荐系统 | 召回、精排、重排与生成式推荐 | [进入](/source/推荐系统/README) |
 
 ## 精选笔记
 
