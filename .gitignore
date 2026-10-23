@@ -20,4 +20,5 @@ start-mllm-main
 hello-gpu-main
 all-in-rag-main
 hello-agents-main
+self-llm-master
 
