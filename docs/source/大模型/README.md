@@ -11,3 +11,4 @@
 - [大模型安全](/source/大模型/安全篇/README)
 - [多模态前沿](/source/大模型/多模态篇/README)
 - [多模态大模型实战](/source/大模型/多模态大模型实战/README)
+- [开源模型实战](/source/大模型/开源模型实战篇/README)
