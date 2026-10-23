@@ -32,6 +32,9 @@
     .markdown-section h4 { font-weight: 600; }
     /* 行内代码用等宽字体，字号略小于正文以协调 */
     .markdown-section code { font-family: var(--code-font-family); font-size: .9em; }
+    /* 代码块复制按钮（docsify-copy-code）：主题的 button 规则会把文字染成橙色，
+       与绿色底对比过低，这里统一为白字并做成右上角小块 */
+    .markdown-section pre .docsify-copy-code-button { color: #fff; border-radius: 0 0 0 6px; }
 
     /* 简历排版优化（前端） */
     .markdown-section { line-height: 1.85; }
