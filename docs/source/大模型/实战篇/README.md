@@ -1,8 +1,8 @@
 # 文本任务实战
 
-> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
-
 经典 NLP 任务的完整落地路径：文本分类从简单实现到 LSTM 再到 BERT 微调的三级演进，以及命名实体识别项目全流程。
+
+> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
 
 ## 目录
 

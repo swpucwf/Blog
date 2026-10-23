@@ -1,8 +1,8 @@
 # 微调与量化
 
-> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
-
 大模型训练侧的核心技术：PEFT 参数高效微调与 LoRA、Qwen2.5 私有数据微调、RLHF 与 DPO 对齐实战、模型量化与 DeepSpeed 分布式训练。
+
+> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
 
 ## 目录
 

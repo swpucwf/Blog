@@ -1,8 +1,8 @@
 # 模型部署工程
 
-> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
-
 模型走向服务的工程化环节：FastAPI 部署、云服务器与 Docker Compose 上线，以及 Git 版本控制与 Jenkins CI/CD 自动化流水线。
+
+> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
 
 ## 目录
 

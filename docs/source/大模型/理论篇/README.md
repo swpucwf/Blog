@@ -1,8 +1,8 @@
 # NLP与Transformer理论
 
-> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
-
 从传统 NLP 到 LLM 的理论基石：文本表示与词向量、循环神经网络、注意力机制与 Transformer、BERT/GPT/T5 预训练模型，以及大模型架构进阶。
+
+> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
 
 ## 目录
 

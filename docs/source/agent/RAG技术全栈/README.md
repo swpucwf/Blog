@@ -1,8 +1,8 @@
 # RAG 技术全栈
 
-> 内容整理自开源教程 [all-in-rag](https://github.com/datawhalechina/all-in-rag)，作为参考笔记。
-
 检索增强生成的技术链路：从 RAG 概念与四步构建最小系统开始，依次覆盖数据加载与分块、向量嵌入、向量数据库与 Milvus、索引优化、混合检索、查询构建与重构、Text2SQL、重排与压缩、结构化生成、系统评估，最后落到知识图谱 RAG、Agentic RAG 两个完整项目。用 LangGraph、LlamaIndex 做的企业级业务实战见[框架实战](/source/agent/RAG框架实战/README)。
+
+> 内容整理自开源教程 [all-in-rag](https://github.com/datawhalechina/all-in-rag)，作为参考笔记。
 
 ## 目录
 

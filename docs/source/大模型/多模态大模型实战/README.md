@@ -1,8 +1,8 @@
 # 多模态大模型实战
 
-> 内容整理自开源教程 [start-mllm](https://github.com/datawhalechina/start-mllm)，作为参考笔记。
-
 从数据配方、评测验收、推理部署到 Demo 与多模态 Agent 的完整工程链路，并附 OCR、多图输入、长图切块三个落地专题。架构原理（ViT/CLIP、BLIP-2/LLaVA、原生统一架构）见[多模态前沿](/source/大模型/多模态篇/README)。
+
+> 内容整理自开源教程 [start-mllm](https://github.com/datawhalechina/start-mllm)，作为参考笔记。
 
 ## 目录
 

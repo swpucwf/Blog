@@ -1,8 +1,8 @@
 # Deep Agents 实战
 
-> 内容整理自开源教程 [datawhalechina/deepagents-in-action](https://github.com/datawhalechina/deepagents-in-action)，作为参考笔记。
-
 基于 LangChain / LangGraph 的 Deep Agents 实战笔记：从 Agent Harness 的定位讲起，覆盖虚拟文件系统、任务规划、子 Agent、Skills、长期记忆、人机协作、沙箱与权限、MCP，以及评分量规、Streaming、Interpreters、动态编排与决策 Harness。
+
+> 内容整理自开源教程 [datawhalechina/deepagents-in-action](https://github.com/datawhalechina/deepagents-in-action)，作为参考笔记。
 
 ## 目录
 

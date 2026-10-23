@@ -1,8 +1,8 @@
 # GPU 算子优化
 
-> 内容整理自开源教程 [hello-gpu](https://github.com/datawhalechina/hello-gpu)，作为参考笔记。
-
 以 AMD Radeon RX 9070 XT + ROCm 10.0 为实验平台，沿「理解硬件 → profiling 取证 → 手写算子优化 → Agent 自动化」的主线，把向量加法、归约、Softmax、GEMM、Attention、RMSNorm 六类算子从 naive 版本优化到接近硬件极限，最后把整条流程交给一个能调用工具的 Agent。
+
+> 内容整理自开源教程 [hello-gpu](https://github.com/datawhalechina/hello-gpu)，作为参考笔记。
 
 ## 目录
 

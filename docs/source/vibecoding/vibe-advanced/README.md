@@ -1,8 +1,8 @@
 # Vibe Vibe 进阶篇
 
-> 内容整理自开源教程 [Vibe Vibe](https://www.vibevibe.cn)，作为参考笔记。
-
 从「能做出东西」到「能交付产品」：环境搭建、AI 调优、PRD 文档驱动、开发基础、UI/UX、数据库、后端 API、认证安全、测试自动化、公网访问、Git 协作、Serverless 部署与 CI/CD、域名 DNS、VPS 运维、SEO 分析、用户反馈迭代。
+
+> 内容整理自开源教程 [Vibe Vibe](https://www.vibevibe.cn)，作为参考笔记。
 
 ## 目录
 

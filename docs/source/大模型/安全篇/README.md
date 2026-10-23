@@ -1,8 +1,8 @@
 # 大模型安全
 
-> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
-
 大模型安全与对齐主题：安全全景总览、威胁建模与风险分析。
+
+> 内容整理自开源教程 [base-llm](https://github.com/datawhalechina/base-llm)，作为参考笔记。
 
 ## 目录
 
