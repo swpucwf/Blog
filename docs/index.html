@@ -342,7 +342,9 @@
   <script src="vendor/flexible-alerts/docsify-plugin-flexible-alerts.min.js"></script>
   <!-- 图片点击放大（docsify 官方插件，基于 medium-zoom；给 img 加 .no-zoom 类可单独禁用） -->
   <script src="vendor/docsify/plugins/zoom-image.min.js"></script>
-  <!-- 阅读进度条（docsify-progress）：默认挂在侧边栏顶部，随滚动显示当前文章阅读进度 -->
+  <!-- 阅读进度条（docsify-progress）：随滚动显示当前文章阅读进度。
+       本地已修过 vendor/progress/progress.min.js（原实现用 body.innerHTML += 重建整页，
+       会连带丢失其它插件已绑定的监听，导致代码块“Copy to clipboard”点了没反应），重新下载时需恢复补丁 -->
   <script src="vendor/progress/progress.min.js"></script>
   <!-- 侧边栏目录折叠：支持分组父项点击展开/收缩（注意不要引入其自带 sidebar.min.css） -->
   <script src="vendor/sidebar-collapse/docsify-sidebar-collapse.min.js"></script>
