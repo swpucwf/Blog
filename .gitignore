@@ -4,14 +4,11 @@
 # 本地环境变量文件，禁止入库
 .env
 .env.local
-
 # macOS
 .DS_Store
 easy-vibe-main
 base-llm-main
-
 # 本地图片上传暂存与临时脚本，不入库
-
 _tmp_*
 
 
