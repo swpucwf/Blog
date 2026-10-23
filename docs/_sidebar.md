@@ -26,3 +26,4 @@
   - [6-5 Vibe Vibe 进阶篇](/source/vibecoding/vibe-advanced/README)
   - [6-6 Vibe Vibe 实践篇](/source/vibecoding/vibe-practice/README)
 - [7 产品经理](/source/产品经理/README)
+- [8 AI 工具全景](/source/AI工具全景/README)

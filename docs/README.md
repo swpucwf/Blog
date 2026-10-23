@@ -26,6 +26,7 @@
 | 05 论文阅读 | 前沿论文精读与整理 | [进入](/source/论文阅读/README) |
 | 06 VibeCoding | AI 编程、Claude Code、规范驱动开发、Vibe Vibe 实践 | [VibeCoding 专栏](/source/vibecoding/README) |
 | 07 产品经理 | 需求判断、JTBD、Mom Test、双钻模型 | [进入](/source/产品经理/README) |
+| 08 AI 工具全景 | 模型 / 框架 / 工具选型、编程范式与角色商业 | [进入](/source/AI工具全景/README) |
 
 ## 精选笔记
 

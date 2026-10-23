@@ -7,4 +7,8 @@
 # macOS
 .DS_Store
 
+# 本地教程源码与图片上传暂存，不入库
+ai-wiki-main/
+_img_upload/
+
 
