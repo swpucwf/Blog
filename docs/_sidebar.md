@@ -7,6 +7,7 @@
   - [3-2 RAG 技术全栈](/source/agent/RAG技术全栈/README)
   - [3-3 RAG 框架实战](/source/agent/RAG框架实战/README)
   - [3-4 Deep Agents 实战](/source/agent/deepagents/README)
+  - [3-5 从零构建智能体](/source/agent/从零构建智能体/README)
 - [4 大模型](/source/大模型/README)
   - [4-1 NLP与Transformer理论](/source/大模型/理论篇/README)
   - [4-2 文本任务实战](/source/大模型/实战篇/README)

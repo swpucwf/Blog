@@ -21,7 +21,7 @@
 | --- | --- | --- |
 | 01 计算机视觉 | 传统 CV 算法、视频结构化 | [传统 CV 算法](/source/传统CV算法/README) · [视频结构化](/source/视频结构化/README) |
 | 02 GPU 算子优化 | ROCm 平台、profiling、手写算子优化 | [进入](/source/GPU算子优化/README) |
-| 03 Agent | Agent 原理、RAG 技术全栈、RAG 框架实战、Deep Agents | [Agent 专栏](/source/agent/README) |
+| 03 Agent | Agent 原理、RAG 技术全栈、RAG 框架实战、Deep Agents、从零构建智能体 | [Agent 专栏](/source/agent/README) |
 | 04 大模型 | 理论、文本实战、微调量化、部署工程、安全、多模态 | [大模型专栏](/source/大模型/README) |
 | 05 论文阅读 | 前沿论文精读与整理 | [进入](/source/论文阅读/README) |
 | 06 VibeCoding | AI 编程、Claude Code、规范驱动开发、Vibe Vibe 实践 | [VibeCoding 专栏](/source/vibecoding/README) |
