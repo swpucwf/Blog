@@ -40,3 +40,7 @@
 > AI 算法工程师，关注大模型、RAG、Agent 与多模态的工程落地，业余持续整理学习笔记。
 >
 > 邮箱：swpucwf@126.com　|　[CSDN](https://blog.csdn.net/weixin_42917352?type=blog)　|　[微信公众号](https://mp.weixin.qq.com/s/trv-R3GXRl_hMeiYMU4nNg)
+
+<img src="https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/img/9dbf3339c65815e8169850551c068382.jpg" width="160" alt="微信公众号二维码" />
+
+扫码关注公众号。
