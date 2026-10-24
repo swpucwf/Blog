@@ -33,7 +33,8 @@
 - [19-生成式排序GenRank与MTGR](/source/推荐系统/19-生成式排序GenRank与MTGR)
 - [20-RankMixer与OneTrans](/source/推荐系统/20-RankMixer与OneTrans)
 - [21-OneRec端到端生成式推荐](/source/推荐系统/21-OneRec端到端生成式推荐)
+- [22-端到端搜索OneSug与OneSearch](/source/推荐系统/22-端到端搜索OneSug与OneSearch)
 
 ## 后续计划
 
-上篇 14 篇、下篇 ch5-ch6 已完成，ch7 端到端进行中。待补：搜索 OneSearch、广告 EGA、推理型推荐、扩散推荐；最后是生产级项目的离线、在线、前端与部署。按源教程章节顺序陆续补充。
+上篇 14 篇、下篇 ch5-ch6 已完成，ch7 端到端已完成推荐与搜索。待补：广告 EGA、推理型推荐、扩散推荐；最后是生产级项目的离线、在线、前端与部署。按源教程章节顺序陆续补充。
