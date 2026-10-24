@@ -29,7 +29,9 @@
 - [15-生成式推荐基础](/source/推荐系统/15-生成式推荐基础)
 - [16-LLM三阶段与推荐映射](/source/推荐系统/16-LLM三阶段与推荐映射)
 - [17-物品Tokenizer与语义ID](/source/推荐系统/17-物品Tokenizer与语义ID)
+- [18-HSTU与推荐ScalingLaw](/source/推荐系统/18-HSTU与推荐ScalingLaw)
+- [19-生成式排序GenRank与MTGR](/source/推荐系统/19-生成式排序GenRank与MTGR)
 
 ## 后续计划
 
-上篇（级联架构）已完成 14 篇。下篇进行中：待补 Scaling Law 架构（HSTU/RankMixer/OneTrans）、生成式排序（GenRank/MTGR）、端到端建模（推荐 / 搜索 / 广告）、推理型推荐、扩散推荐；最后是生产级项目的离线、在线、前端与部署。按源教程章节顺序陆续补充。
+上篇（级联架构）已完成 14 篇，下篇基础（ch5）与 Scaling 主篇（HSTU/GenRank/MTGR）已完成。待补：RankMixer 与 OneTrans、端到端建模（推荐 / 搜索 / 广告）、推理型推荐、扩散推荐；最后是生产级项目的离线、在线、前端与部署。按源教程章节顺序陆续补充。
